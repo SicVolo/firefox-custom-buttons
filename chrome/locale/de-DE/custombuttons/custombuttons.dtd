@@ -1,0 +1,22 @@
+<!ENTITY custombuttons "Custom Buttons">
+
+<!ENTITY custombuttons.viewMenu_Item "Schaltfläche hinzufügen...">
+<!ENTITY custombuttons.buttonPopup.edit "Schaltfläche bearbeiten...">
+<!ENTITY custombuttons.buttonPopup.remove "Schaltfläche löschen">
+<!ENTITY custombuttons.buttonPopup.clone "Schaltfläche klonen">
+<!ENTITY custombuttons.buttonPopup.copyURI "In die Zwischenablage kopieren">
+<!ENTITY custombuttons.buttonPopup.bookmark "Lesezeichen für Schaltfläche setzen">
+<!ENTITY custombuttons.buttonPopup.help "Hilfe...">
+<!ENTITY custombuttons.buttonPopup.update "Schaltfläche aktualisieren">
+<!ENTITY custombuttons.buttonPopup.subCall "Eigene Schaltfläche">
+
+<!ENTITY custombuttons_prefsDialog.title "Custom Buttons: Einstellungen">
+<!ENTITY custombuttons.prefs.show_apply_button "Zeige &quot;Übernehmen&quot; im Schaltflächen-Codeeditor">
+<!ENTITY custombuttons.prefs.disable_init "Schaltflächen-Initialisierung abschalten (Bei Problemen mit Schaltflächen zu benutzen, wirkt sich nur auf neue Fenster aus)">
+<!ENTITY custombuttons.prefs.enable_custombutton_protocol "Installation von Schaltflächen aus Mail-Nachrichten ermöglichen">
+<!ENTITY custombuttons.prefs.editor_save_size_and_position "Größe und Position der Bearbeiten-Fenster für jede Schaltfläche separat speichern">
+
+<!ENTITY custombuttons.about.supportPageURL "Support Website besuchen">
+
+<!ENTITY custombuttons.addons4.sortname "Name">
+<!ENTITY custombuttons.addons4.nobuttons "You don't have any custom button installed">

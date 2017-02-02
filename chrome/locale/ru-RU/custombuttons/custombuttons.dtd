@@ -1,0 +1,22 @@
+<!ENTITY custombuttons "Custom Buttons">
+
+<!ENTITY custombuttons.viewMenu_Item "Добавить новую кнопку…">
+<!ENTITY custombuttons.buttonPopup.edit "Редактировать…">
+<!ENTITY custombuttons.buttonPopup.remove "Удалить">
+<!ENTITY custombuttons.buttonPopup.clone "Клонировать">
+<!ENTITY custombuttons.buttonPopup.copyURI "Копировать код в буфер">
+<!ENTITY custombuttons.buttonPopup.bookmark "Сделать закладку">
+<!ENTITY custombuttons.buttonPopup.help "Справка">
+<!ENTITY custombuttons.buttonPopup.update "Обновить кнопку">
+<!ENTITY custombuttons.buttonPopup.subCall "Меню кнопки">
+
+<!ENTITY custombuttons_prefsDialog.title "Custom Buttons: настройки">
+<!ENTITY custombuttons.prefs.show_apply_button "Отобразить кнопку &quot;Сохранить&quot; в редакторе кода">
+<!ENTITY custombuttons.prefs.disable_init "Отключить инициализацию кнопок (используйте при проблемах с кнопками, изменения примут силу только в новых окнах)">
+<!ENTITY custombuttons.prefs.enable_custombutton_protocol "Разрешить установку кнопок из почтовых сообщений">
+<!ENTITY custombuttons.prefs.editor_save_size_and_position "Сохранять размеры и позицию окон редактора отдельно для каждой кнопки">
+
+<!ENTITY custombuttons.about.supportPageURL "Открыть страницу поддержки">
+
+<!ENTITY custombuttons.addons4.sortname "Имя">
+<!ENTITY custombuttons.addons4.nobuttons "У вас нет установленных пользовательских кнопок">

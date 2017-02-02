@@ -1,0 +1,49 @@
+<!ENTITY editor.dialog.help "Ayuda">
+<!ENTITY editor.dialog.help.accesskey "A">
+<!ENTITY editor.dialog.title "Editar botón">
+<!ENTITY editor.dialog.editexternal "Usar editor externo…">
+<!ENTITY editor.name "Nombre:">
+<!ENTITY editor.name.accesskey "N">
+<!ENTITY editor.name.tooltiptext "Define la etiqueta y el texto emergente del botón">
+<!ENTITY editor.image "Imagen:">
+<!ENTITY editor.image.accesskey "m">
+<!ENTITY editor.select "Navegar…">
+<!ENTITY editor.select.accesskey "v">
+<!ENTITY editor.base64 "&#8658; Base64">
+<!ENTITY editor.base64.accesskey "b">
+<!ENTITY editor.base64.tooltiptext "Convierte la imagen a formato Base64 (data:image/png;base64,...)">
+<!ENTITY editor.code "Código">
+<!ENTITY editor.code.accesskey "C">
+<!ENTITY editor.code.tooltiptext "Este código se ejecuta al pulsar el botón">
+<!ENTITY editor.initCode "Código de inicialización">
+<!ENTITY editor.initCode.accesskey "I">
+<!ENTITY editor.initCode.tooltiptext "Este código se ejecuta al iniciar la ventana de la aplicación.">
+<!ENTITY editor.code.defaultValue "/*CÓDIGO*/">
+<!ENTITY editor.initCode.defaultValue "/*CÓDIGO DE INICIALIZACIÓN*/">
+<!ENTITY editor.Apply "Guardar">
+<!ENTITY editor.urlfield "URL del botón:">
+<!ENTITY editor.urlfield.accesskey "U">
+<!ENTITY editor.buttonSettings "Preferencias del botón">
+<!ENTITY editor.buttonSettings.accesskey "s">
+<!ENTITY editor.buttonSettings.tooltiptext "Panel de configuración del botón">
+<!ENTITY editor.buttonSettings.hotKeyGroupbox "Tecla de acceso rápido">
+<!ENTITY editor.buttonSettings.accelkey "Hotkey:">
+<!ENTITY editor.buttonSettings.disableDefaultKeyBehavior "Deshabilitar acción por defecto para la tecla de acceso directo especificada.">
+<!ENTITY editor.buttonSettings.addMoreKeys "More…">
+
+<!ENTITY cbeditor.quickfindtextbox "Búsqueda rápida: ">
+
+<!ENTITY finddialog.findtextbox "Buscar: ">
+<!ENTITY finddialog.replacetextbox "Reemplazar: ">
+<!ENTITY finddialog.optionscaption "Opciones">
+<!ENTITY finddialog.casesensitive "Respetar mayúsculas y minúsculas">
+<!ENTITY finddialog.prompteachreplace "Preguntar en cada reemplazo">
+<!ENTITY finddialog.directioncaption "Dirección">
+<!ENTITY finddialog.forward "Hacia adelante">
+<!ENTITY finddialog.backward "Hacia atrás">
+
+<!ENTITY repprompt.replace "Reemplazar">
+<!ENTITY repprompt.cancel "Cancelar">
+<!ENTITY repprompt.skip "Omitir">
+<!ENTITY repprompt.replaceall "Reemplazar todo">
+<!ENTITY repprompt.msg "¿ Reemplazar ?">

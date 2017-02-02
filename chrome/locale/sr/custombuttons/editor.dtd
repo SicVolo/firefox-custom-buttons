@@ -1,0 +1,46 @@
+<!ENTITY editor.dialog.help "Помоћ">
+<!ENTITY editor.dialog.help.accesskey "о">
+<!ENTITY editor.dialog.title "Уреди дугме">
+<!ENTITY editor.dialog.editexternal "Edit external…">
+<!ENTITY editor.name "Назив:">
+<!ENTITY editor.name.accesskey "Н">
+<!ENTITY editor.name.tooltiptext "Одређује натпис на дугмету и искачући текст">
+<!ENTITY editor.image "Слика:">
+<!ENTITY editor.image.accesskey "л">
+<!ENTITY editor.select "Прегледај...">
+<!ENTITY editor.select.accesskey "П">
+<!ENTITY editor.base64 "&amp;#8658; base64">
+<!ENTITY editor.base64.accesskey "б">
+<!ENTITY editor.base64.tooltiptext "Претвара слику у облик base64 (data:image/png;base64,...)">
+<!ENTITY editor.code "Кôд">
+<!ENTITY editor.code.accesskey "К">
+<!ENTITY editor.code.tooltiptext "Извршава приликом притиска на дугме">
+<!ENTITY editor.initCode "Кôд за покретање">
+<!ENTITY editor.initCode.accesskey "д">
+<!ENTITY editor.initCode.tooltiptext "Извршава при покретању прегледача">
+<!ENTITY editor.code.defaultValue "/*CODE*/">
+<!ENTITY editor.initCode.defaultValue "/*Initialization Code*/">
+<!ENTITY editor.Apply "С">
+<!ENTITY editor.urlfield "Адреса дугмета:">
+<!ENTITY editor.urlfield.accesskey "А">
+<!ENTITY editor.buttonSettings "Подешавања дугмета">
+<!ENTITY editor.buttonSettings.accesskey "о">
+<!ENTITY editor.buttonSettings.tooltiptext "табла за подешавања дугмета">
+<!ENTITY editor.buttonSettings.hotKeyGroupbox "Пречица:">
+<!ENTITY editor.buttonSettings.accelkey "Пречица:">
+<!ENTITY editor.buttonSettings.disableDefaultKeyBehavior "Онемогући подразумевану активност за изабрану пречицу">
+<!ENTITY editor.buttonSettings.addMoreKeys "Више...">
+<!ENTITY cbeditor.quickfindtextbox "Брзо пронађи:">
+<!ENTITY finddialog.findtextbox "Пронађи:">
+<!ENTITY finddialog.replacetextbox "Замени:">
+<!ENTITY finddialog.optionscaption "Опције">
+<!ENTITY finddialog.casesensitive "Подударање малих и великих слова">
+<!ENTITY finddialog.prompteachreplace "Питај за сваку замену">
+<!ENTITY finddialog.directioncaption "Смер">
+<!ENTITY finddialog.forward "унапред">
+<!ENTITY finddialog.backward "уназад">
+<!ENTITY repprompt.replace "Замени">
+<!ENTITY repprompt.cancel "Откажи">
+<!ENTITY repprompt.skip "Прескочи">
+<!ENTITY repprompt.replaceall "Замени све">
+<!ENTITY repprompt.msg "Заменити?">

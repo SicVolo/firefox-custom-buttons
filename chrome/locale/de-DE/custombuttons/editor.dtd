@@ -1,0 +1,49 @@
+<!ENTITY editor.dialog.help "Hilfe">
+<!ENTITY editor.dialog.help.accesskey "H">
+<!ENTITY editor.dialog.title "Schaltfläche bearbeiten">
+<!ENTITY editor.dialog.editexternal "Edit external…">
+<!ENTITY editor.name "Name:">
+<!ENTITY editor.name.accesskey "N">
+<!ENTITY editor.name.tooltiptext "Legt den Text für die Beschriftung der Schaltfläche und des Popups fest">
+<!ENTITY editor.image "Bild:">
+<!ENTITY editor.image.accesskey "L">
+<!ENTITY editor.select "Durchsuchen ...">
+<!ENTITY editor.select.accesskey "D">
+<!ENTITY editor.base64 "» Base64">
+<!ENTITY editor.base64.accesskey "B">
+<!ENTITY editor.base64.tooltiptext "Wandelt das Bild ins Base64-Format (data:image/png;base64,...) um">
+<!ENTITY editor.code "Kodieren">
+<!ENTITY editor.code.accesskey "K">
+<!ENTITY editor.code.tooltiptext "Kodiert die Schaltfläche per Klick">
+<!ENTITY editor.initCode "Initialisierungscode">
+<!ENTITY editor.initCode.accesskey "I">
+<!ENTITY editor.initCode.tooltiptext "Wird beim Browserstart ausgeführt">
+<!ENTITY editor.code.defaultValue "/*CODE*/">
+<!ENTITY editor.initCode.defaultValue "/*Bereitstellungscode*/">
+<!ENTITY editor.Apply "Übernehmen">
+<!ENTITY editor.urlfield "Schaltflächen-URL:">
+<!ENTITY editor.urlfield.accesskey "U">
+<!ENTITY editor.buttonSettings "Schaltflächeneinstellungen">
+<!ENTITY editor.buttonSettings.accesskey "e">
+<!ENTITY editor.buttonSettings.tooltiptext "Schaltflächeneinstellungen">
+<!ENTITY editor.buttonSettings.hotKeyGroupbox "Zugriffstaste">
+<!ENTITY editor.buttonSettings.accelkey "Hotkey:">
+<!ENTITY editor.buttonSettings.disableDefaultKeyBehavior "Standardzuordnung dieser Tastenkombination aufheben">
+<!ENTITY editor.buttonSettings.addMoreKeys "Mehr...">
+
+<!ENTITY cbeditor.quickfindtextbox "Schnellsuche: ">
+
+<!ENTITY finddialog.findtextbox "Suchen: ">
+<!ENTITY finddialog.replacetextbox "Ersetzen: ">
+<!ENTITY finddialog.optionscaption "Optionen">
+<!ENTITY finddialog.casesensitive "Groß-/Kleinschreibung beachten">
+<!ENTITY finddialog.prompteachreplace "Vor dem Ersetzen bestätigen">
+<!ENTITY finddialog.directioncaption "Richtung">
+<!ENTITY finddialog.forward "Abwärts">
+<!ENTITY finddialog.backward "Aufwärts">
+
+<!ENTITY repprompt.replace "Ersetzen">
+<!ENTITY repprompt.cancel "Abbrechen">
+<!ENTITY repprompt.skip "Überspringen">
+<!ENTITY repprompt.replaceall "Alle ersetzen">
+<!ENTITY repprompt.msg "Ersetzen ?">

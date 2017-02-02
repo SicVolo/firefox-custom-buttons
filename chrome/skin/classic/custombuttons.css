@@ -1,0 +1,85 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/*
+* Использованы кнопки из расширения "CuteMenus - Crystal SVG"
+* (http://www.cutemenuproject.com/)
+*/
+toolbarbutton[id^="custombuttons-button"],
+toolbarbutton[id^="custombuttons-button"]:hover,
+toolbarbutton[id^="custombuttons-button"]:hover:active
+{
+	-moz-image-region: auto !important;
+}
+
+toolbarbutton[id^="custombuttons-button"],
+toolbarbutton[cb-stdicon="custombuttons-stdicon-1"] {
+  list-style-image: url("chrome://custombuttons/skin/button.png") !important;
+}
+
+toolbarbutton[cb-stdicon="custombuttons-stdicon-2"]
+{
+	list-style-image: url("chrome://custombuttons/skin/stdicons/rbutton.png") !important;
+}
+
+toolbarbutton[cb-stdicon="custombuttons-stdicon-3"]
+{
+	list-style-image: url("chrome://custombuttons/skin/stdicons/gbutton.png") !important;
+}
+
+toolbarbutton[cb-stdicon="custombuttons-stdicon-4"]
+{
+	list-style-image: url("chrome://custombuttons/skin/stdicons/bbutton.png") !important;
+}
+
+toolbarbutton[id^='custombuttons-button'][initializeerror]{
+	opacity:0.5;
+}
+
+toolbarbutton[id^='custombuttons-button'][cb-edit-state='inactive']{
+    opacity: 0.75 !important;
+    outline: 2px dotted red !important;
+    outline-offset: -3px !important;
+}
+
+toolbarbutton[id^='custombuttons-button'][cb-edit-state='active']{
+    outline: 2px solid red !important;
+    outline-offset: -3px !important;
+}
+
+toolbarbutton[id^='custombuttons-button'][cb-last-saved]{
+    outline: 3px groove red !important;
+    outline-offset: -4px !important;
+}
+
+menuitem[id^="custombuttons-contextpopup-"] {
+   -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic") !important;
+}
+
+
+menuitem[id^="custombuttons-contextpopup-edit"]{
+  list-style-image: url("chrome://custombuttons/skin/edit.png") !important;
+}
+
+menuitem[id^="custombuttons-contextpopup-remove"]{
+  list-style-image: url("chrome://custombuttons/skin/remove.png") !important;
+}
+
+menuitem[id^="custombuttons-contextpopup-clone"]{
+  list-style-image: url("chrome://custombuttons/skin/clone.png") !important;
+}
+
+menuitem[id^="custombuttons-contextpopup-copyURI"]{
+  list-style-image: url("chrome://custombuttons/skin/copy.png") !important;
+}
+
+menuitem[id^="custombuttons-contextpopup-updateButton"]{
+  list-style-image: url("chrome://custombuttons/skin/paste1.png") !important;
+}
+
+menuitem[id^="custombuttons-contextpopup-bookmarkButton"]{
+  list-style-image: url("chrome://custombuttons/skin/bookmark1.png") !important;
+}
+
+menuitem[id^="custombuttons-contextpopup-buttonHelp"]{
+  list-style-image: url("chrome://custombuttons/skin/help1.png") !important;
+}

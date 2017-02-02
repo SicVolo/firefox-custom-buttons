@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://custombuttons/locale/custombuttons.dtd">
+
+<dialog id="custombuttonsPrefsDialog"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept, cancel"
+        onload="cbPrefs.onLoad();"
+        ondialogaccept="return cbPrefs.onAccept();"
+        ondialogcancel="return cbPrefs.onCancel();"
+        title="&custombuttons_prefsDialog.title;"
+		persist="screenX screenY">
+
+    <script type="application/x-javascript" src="chrome://custombuttons/content/prefs.js"/>
+
+    <vbox>
+        <groupbox flex="1">
+            <checkbox id="modebit1" label="&custombuttons.prefs.show_apply_button;"/>
+	    <checkbox id="modebit5" label="&custombuttons.prefs.disable_init;"/>
+            <checkbox id="modebit7"
+            label="&custombuttons.prefs.enable_custombutton_protocol;"
+            hidden="true"/>
+	    <checkbox id="modebit6" label="&custombuttons.prefs.editor_save_size_and_position;"/>
+        </groupbox>
+  </vbox>
+
+</dialog>

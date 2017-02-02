@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<?xul-overlay href="chrome://custombuttons/content/commoverlay.xul"?>
+<!DOCTYPE overlay [
+<!ENTITY % editorDTD SYSTEM "chrome://editor/locale/editor.dtd">
+%editorDTD;
+<!ENTITY % editorOverlayDTD SYSTEM "chrome://editor/locale/editorOverlay.dtd">
+%editorOverlayDTD;
+<!ENTITY % custombuttonsDTD SYSTEM "chrome://custombuttons/locale/custombuttons.dtd" >
+%custombuttonsDTD;
+]>
+
+<overlay id="custombuttonsOverlay"
+		 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	 <window id="editorWindow">
+	 	<stringbundleset id="cbStringBundleSet"/>
+		
+		<broadcasterset id="custombuttons-broadcasterset"/>
+		<broadcasterset id="custombuttons-buttons-broadcasterset"/>
+
+		<menupopup id="custombuttons-contextpopup">
+			<menuitem id="custombuttons-contextpopup-addnewbutton"
+				  class="menuitem-iconic"
+					  label="&custombuttons.viewMenu_Item;"
+					  oncommand="custombuttons.addButton()"
+					  observes="custombuttons-contextbroadcaster-primary"/>
+			<menuitem id="custombuttons-contextpopup-customize"
+				  class="menuitem-iconic"
+					  accesskey="&customizeToolbar.accesskey;"
+					  label="&customizeToolbar.label;"
+					  observes="custombuttons-contextbroadcaster-primary"
+					  oncommand="CustomizeToolbar('EditorToolbox');"/>
+			<menu id="custombuttons-contextpopup-subCall"
+				  label="&custombuttons.buttonPopup.subCall;"
+				  observes="custombuttons-contextbroadcaster-secondary">
+				<menupopup id="custombuttons-contextpopup-sub">
+					<menuitem id="custombuttons-contextpopup-addnewbutton-sub"
+						  class="menuitem-iconic"
+							  label="&custombuttons.viewMenu_Item;"
+							  oncommand="custombuttons.addButton()"/>
+					<menuitem id="custombuttons-contextpopup-customize-sub"
+						  class="menuitem-iconic"
+							  accesskey="&customizeToolbar.accesskey;"
+							  label="&customizeToolbar.label;"
+							  oncommand="CustomizeToolbar('EditorToolbox');"/>
+				</menupopup>
+			</menu>
+		</menupopup>
+		
+	</window>
+
+	<menupopup id="menu_View_Popup">
+		<menuseparator/>
+		<menuitem label="&custombuttons.viewMenu_Item;"
+			  class="menuitem-iconic"
+				  oncommand="custombuttons.addButton()"/>
+	</menupopup>
+	
+</overlay>

@@ -1,0 +1,46 @@
+<!ENTITY editor.dialog.help "Help">
+<!ENTITY editor.dialog.help.accesskey "H">
+<!ENTITY editor.dialog.title "Knop wijzigen">
+<!ENTITY editor.dialog.editexternal "Edit external…">
+<!ENTITY editor.name "Naam:">
+<!ENTITY editor.name.accesskey "N">
+<!ENTITY editor.name.tooltiptext "Definieert de benaming van de knop en de popup tekst">
+<!ENTITY editor.image "Afbeelding:">
+<!ENTITY editor.image.accesskey "A">
+<!ENTITY editor.select "Bladeren…">
+<!ENTITY editor.select.accesskey "B">
+<!ENTITY editor.base64 "⇒ base64">
+<!ENTITY editor.base64.accesskey "s">
+<!ENTITY editor.base64.tooltiptext "Converteert plaatje naar base64 format (data:image/png;base64,...)">
+<!ENTITY editor.code "Code">
+<!ENTITY editor.code.accesskey "C">
+<!ENTITY editor.code.tooltiptext "Wordt uitgevoerd wanneer de knop wordt ingedrukt">
+<!ENTITY editor.initCode "Initialisatie code">
+<!ENTITY editor.initCode.accesskey "I">
+<!ENTITY editor.initCode.tooltiptext "Wordt uitgevoerd wanneer de browser opstart">
+<!ENTITY editor.code.defaultValue "/*CODE*/">
+<!ENTITY editor.initCode.defaultValue "/*Initialisatie code*/">
+<!ENTITY editor.Apply "Opslaan">
+<!ENTITY editor.urlfield "Knop-URL:">
+<!ENTITY editor.urlfield.accesskey "U">
+<!ENTITY editor.buttonSettings "Knopinstellingen">
+<!ENTITY editor.buttonSettings.accesskey "i">
+<!ENTITY editor.buttonSettings.tooltiptext "Knopinstellingenpaneel">
+<!ENTITY editor.buttonSettings.hotKeyGroupbox "‘Snel’toets">
+<!ENTITY editor.buttonSettings.accelkey "Sneltoets:">
+<!ENTITY editor.buttonSettings.disableDefaultKeyBehavior "Standaardactie voor opgegeven sneltoets uitschakelen">
+<!ENTITY editor.buttonSettings.addMoreKeys "Meer…">
+<!ENTITY cbeditor.quickfindtextbox "Snel zoeken:">
+<!ENTITY finddialog.findtextbox "Zoeken:">
+<!ENTITY finddialog.replacetextbox "Vervangen:">
+<!ENTITY finddialog.optionscaption "Opties">
+<!ENTITY finddialog.casesensitive "Hoofdlettergevoelig">
+<!ENTITY finddialog.prompteachreplace "Vragen bij elke vervanging">
+<!ENTITY finddialog.directioncaption "Richting">
+<!ENTITY finddialog.forward "Vooruit">
+<!ENTITY finddialog.backward "Terug">
+<!ENTITY repprompt.replace "Vervangen">
+<!ENTITY repprompt.cancel "Annuleren">
+<!ENTITY repprompt.skip "Overslaan">
+<!ENTITY repprompt.replaceall "Alles vervangen">
+<!ENTITY repprompt.msg "Vervangen?">

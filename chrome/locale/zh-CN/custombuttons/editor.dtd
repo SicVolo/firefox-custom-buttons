@@ -1,0 +1,46 @@
+<!ENTITY editor.dialog.help "帮助">
+<!ENTITY editor.dialog.help.accesskey "H">
+<!ENTITY editor.dialog.title "编辑按钮">
+<!ENTITY editor.dialog.editexternal "编辑外部…">
+<!ENTITY editor.name "名称:">
+<!ENTITY editor.name.accesskey "N">
+<!ENTITY editor.name.tooltiptext "定制按钮的文本和弹出文字">
+<!ENTITY editor.image "图片:">
+<!ENTITY editor.image.accesskey "m">
+<!ENTITY editor.select "浏览…">
+<!ENTITY editor.select.accesskey "o">
+<!ENTITY editor.base64 "&#8658; base64">
+<!ENTITY editor.base64.accesskey "b">
+<!ENTITY editor.base64.tooltiptext "把图片转换到 base64 格式 (data:image/png;base64,...)">
+<!ENTITY editor.code "代码">
+<!ENTITY editor.code.accesskey "C">
+<!ENTITY editor.code.tooltiptext "点击按钮时执行的代码">
+<!ENTITY editor.initCode "初始化代码">
+<!ENTITY editor.initCode.accesskey "I">
+<!ENTITY editor.initCode.tooltiptext "浏览器启动时执行的代码">
+<!ENTITY editor.code.defaultValue "/*代码*/">
+<!ENTITY editor.initCode.defaultValue "/*初始化代码*/">
+<!ENTITY editor.Apply "保存">
+<!ENTITY editor.urlfield "按钮URL:">
+<!ENTITY editor.urlfield.accesskey "U">
+<!ENTITY editor.buttonSettings "按钮设置">
+<!ENTITY editor.buttonSettings.accesskey "s">
+<!ENTITY editor.buttonSettings.tooltiptext "按钮设置面板">
+<!ENTITY editor.buttonSettings.hotKeyGroupbox "快键键">
+<!ENTITY editor.buttonSettings.accelkey "快键键:">
+<!ENTITY editor.buttonSettings.disableDefaultKeyBehavior "禁用指定快捷键默认动作">
+<!ENTITY editor.buttonSettings.addMoreKeys "更多...">
+<!ENTITY cbeditor.quickfindtextbox "快速查找: ">
+<!ENTITY finddialog.findtextbox "查找: ">
+<!ENTITY finddialog.replacetextbox "替换: ">
+<!ENTITY finddialog.optionscaption "选项">
+<!ENTITY finddialog.casesensitive "匹配大小写">
+<!ENTITY finddialog.prompteachreplace "提示每一次替换">
+<!ENTITY finddialog.directioncaption "方向">
+<!ENTITY finddialog.forward "向前">
+<!ENTITY finddialog.backward "向后">
+<!ENTITY repprompt.replace "替换">
+<!ENTITY repprompt.cancel "取消">
+<!ENTITY repprompt.skip "跳过">
+<!ENTITY repprompt.replaceall "全部替换">
+<!ENTITY repprompt.msg "替换?">

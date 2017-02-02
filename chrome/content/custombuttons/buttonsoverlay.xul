@@ -1,0 +1,17 @@
+<overlay id="custombuttons-profile-overlay"
+		 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<!-- Firefox -->
+	<toolbarpalette id="BrowserToolbarPalette"/>
+	
+	<!-- Thunderbird -->
+	<toolbarpalette id="MailToolbarPalette"/> <!-- main window -->
+	<toolbarpalette id="MsgComposeToolbarPalette"/> <!-- message compose -->
+	
+	<!-- Sunbird -->
+	<toolbarpalette id="calendarToolbarPalette"/>
+	
+	<!-- KompoZer -->
+	<toolbarpalette id="NvuToolbarPalette"/>
+
+</overlay>

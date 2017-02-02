@@ -1,0 +1,49 @@
+<!ENTITY editor.dialog.help "Help">
+<!ENTITY editor.dialog.help.accesskey "H">
+<!ENTITY editor.dialog.title "Edycja przycisku">
+<!ENTITY editor.dialog.editexternal "Edit external…">
+<!ENTITY editor.name "Nazwa:">
+<!ENTITY editor.name.accesskey "N">
+<!ENTITY editor.name.tooltiptext "Ustala etykietkę przycisku, i tekst podpowiedzi">
+<!ENTITY editor.image "Ikona:">
+<!ENTITY editor.image.accesskey "m">
+<!ENTITY editor.select "Przeglądaj…">
+<!ENTITY editor.select.accesskey "o">
+<!ENTITY editor.base64 "&#10162; base64">
+<!ENTITY editor.base64.accesskey "b">
+<!ENTITY editor.base64.tooltiptext "Konwertuje obrazek ikony do formatu base64 (data:image/png;base64,...)">
+<!ENTITY editor.code "Kod">
+<!ENTITY editor.code.accesskey "C">
+<!ENTITY editor.code.tooltiptext "Uruchamiany po wciśnięciu przycisku">
+<!ENTITY editor.initCode "Inicjowany kod">
+<!ENTITY editor.initCode.accesskey "I">
+<!ENTITY editor.initCode.tooltiptext "Uruchamiany przy starcie przeglądarki">
+<!ENTITY editor.code.defaultValue "/*KOD*/">
+<!ENTITY editor.initCode.defaultValue "/*Inicjowany kod*/">
+<!ENTITY editor.Apply "Save">
+<!ENTITY editor.urlfield "Button URL:">
+<!ENTITY editor.urlfield.accesskey "U">
+<!ENTITY editor.buttonSettings "Button settings">
+<!ENTITY editor.buttonSettings.accesskey "s">
+<!ENTITY editor.buttonSettings.tooltiptext "Button settings panel">
+<!ENTITY editor.buttonSettings.hotKeyGroupbox "&quot;Hot&quot; key">
+<!ENTITY editor.buttonSettings.accelkey "Hotkey:">
+<!ENTITY editor.buttonSettings.disableDefaultKeyBehavior "Disable default action for specified hotkey">
+<!ENTITY editor.buttonSettings.addMoreKeys "More…">
+
+<!ENTITY cbeditor.quickfindtextbox "Quick Find: ">
+
+<!ENTITY finddialog.findtextbox "Find: ">
+<!ENTITY finddialog.replacetextbox "Replace: ">
+<!ENTITY finddialog.optionscaption "Options">
+<!ENTITY finddialog.casesensitive "Case sensitive">
+<!ENTITY finddialog.prompteachreplace "Prompt each replace">
+<!ENTITY finddialog.directioncaption "Direction">
+<!ENTITY finddialog.forward "Forward">
+<!ENTITY finddialog.backward "Backward">
+
+<!ENTITY repprompt.replace "Replace">
+<!ENTITY repprompt.cancel "Cancel">
+<!ENTITY repprompt.skip "Skip">
+<!ENTITY repprompt.replaceall "Replace All">
+<!ENTITY repprompt.msg "Replace ?">

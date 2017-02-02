@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+
+<!--
+// ***** BEGIN LICENSE BLOCK *****
+// Version: MPL 1.1
+//
+// The contents of this file are subject to the Mozilla Public License Version
+// 1.1 (the "License"); you may not use this file except in compliance with
+// the License. You may obtain a copy of the License at
+// http://www.mozilla.org/MPL/
+//
+// Software distributed under the License is distributed on an "AS IS" basis,
+// WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+// for the specific language governing rights and limitations under the
+// License.
+//
+// The Original Code is Mozilla.
+//
+// The original source file is menulist.xml (Mozilla Firefox 3.0)
+//
+// Custom Buttons:
+// - Gives a possibility to create custom toolbarbuttons.
+// - This component implements editable iconic menulist
+//
+// Author: Anton Glazatov (c) 2009
+//
+// ***** END LICENSE BLOCK *****
+-->
+
+<bindings id="menulistBindings2"
+   xmlns="http://www.mozilla.org/xbl"
+   xmlns:html="http://www.w3.org/1999/xhtml"
+   xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   xmlns:xbl="http://www.mozilla.org/xbl">
+
+	<binding id="custombuttons-menuitem-iconic" extends="chrome://global/content/bindings/menu.xml#menuitem-base">
+		<content>
+			<xul:hbox class="custombuttons-menu-iconic" align="center" pack="center"
+					  xbl:inherits="selected,_moz-menuactive,disabled,checked" flex="1">
+				<xul:image class="custombuttons-menu-iconic-icon" xbl:inherits="src=image,validate,src"/>
+				<xul:spacer width="5"/>
+				<xul:label class="menu-iconic-text" flex="1" xbl:inherits="value=label,accesskey,crop" crop="right" height="16"/>
+			</xul:hbox>
+		</content>
+	</binding>
+	
+	<binding id="custombuttons-menulist-editable-iconic" display="xul:menu" extends="chrome://global/content/bindings/menulist.xml#menulist-base">
+		<content sizetopopup="pref">
+			<xul:hbox class="menulist-editable-box textbox-input-box" xbl:inherits="context,disabled,readonly,focused" flex="1" align="center" pack="center" height="24">
+				<xul:image class="custombuttons-menulist-icon" xbl:inherits="src=image,src"/>
+				<xul:spacer width="5"/>
+				<html:input class="menulist-editable-input" flex="1" anonid="input" allowevents="true"
+							xbl:inherits="value=label,disabled,tabindex,readonly"/>
+			</xul:hbox>
+			<xul:dropmarker class="menulist-dropmarker" type="menu"
+							xbl:inherits="open,disabled,parentfocused=focused"/>
+			<children includes="menupopup"/>
+		</content>
+		
+		<implementation>
+			<constructor>
+				<![CDATA[
+					var popup = this. menupopup;
+					if (popup)
+					{
+						var value = this. getAttribute ("value");
+						var mis = popup. getElementsByAttribute ("label", value);
+						if (mis. length == 0)
+							mis = popup. getElementsByAttribute ("value", value);
+						var i, mi;
+						for (i = 0; i < mis. length; i++)
+						{
+							if (mis. item (i). nodeName == "menuitem")
+							{
+								mi = mis. item (i);
+								break;
+							}
+						}
+						if (!mi)
+							mi = popup. getElementsByTagName ("menuitem") [0];
+						this. selectedItem = mi || null;
+					}
+				]]>
+			</constructor>
+			
+			<field name="menuBoxObject" readonly="true">
+				this. boxObject. QueryInterface (Components. interfaces. nsIMenuBoxObject)
+			</field>
+			
+			<field name="_inputField">null</field>
+			
+			<property name="inputField" readonly="true">
+				<getter>
+					<![CDATA[
+						if (!this. _inputField)
+							this. _inputField = document. getAnonymousElementByAttribute (this, "anonid", "input");
+						return this. _inputField;
+					]]>
+				</getter>
+			</property>
+			
+			<property name="menupopup" readonly="true">
+				<getter>
+					<![CDATA[
+						var popup = this. firstChild;
+						while (popup && popup. localName != "menupopup")
+							popup = popup. nextSibling;
+						return popup;
+					]]>
+				</getter>
+			</property>
+			
+			<field name="_selectedItem">null</field>
+
+			<method name="allowedSource">
+			  <parameter name="src"/>
+			  <body>
+			    <![CDATA[
+				     var cbs = Components. classes ["@xsms.nm.ru/custombuttons/cbservice;1"]. getService (Components. interfaces. cbICustomButtonsService);
+				     return cbs. allowedSource (src);
+			    ]]>
+			  </body>
+			</method>
+			
+			<property name="selectedItem">
+				<getter>
+					<![CDATA[
+						return this. _selectedItem;
+					]]>
+				</getter>
+				<setter>
+					<![CDATA[
+						if (this. _selectedItem == val)
+							return;
+						var newValue = "";
+						var label, value;
+						if (val)
+						{
+							value = val. getAttribute ("value");
+							label = val. getAttribute ("label");
+							newValue = label || value;
+						}
+						this. setAttribute ("value", newValue);
+						if (label && this. allowedSource (label))
+							this. setAttribute ("src", label);
+						else
+							this. setAttribute ("src", "");
+						this. inputField. value = label || "";
+						this. _selectedItem = val;
+						var event = document. createEvent ("Events");
+            			event. initEvent ("select", true, true);
+            			this. dispatchEvent (event);
+					]]>
+				</setter>
+			</property>
+			
+			<property name="value">
+				<getter>
+					<![CDATA[
+						if (this. selectedItem)
+							return this. getAttribute ("value");
+						return this. inputField. value;
+					]]>
+				</getter>
+				<setter>
+					<![CDATA[
+						 if (!this. allowedSource (val))
+						 	return;
+						var popup = this. menupopup;
+						var mis = popup. getElementsByAttribute ("label", val);
+						if (mis. length == 0)
+							mis = popup. getElementsByAttribute ("value", val);
+						var i, mi;
+						for (i = 0; i < mis. length; i++)
+						{
+							if (mis. item (i). nodeName == "menuitem")
+							{
+								mi = mis. item (i);
+								break;
+							}
+						}
+						if (mi)
+						{
+							this. selectedItem = mi;
+						}
+						else if (val)
+						{
+							var nmi = document. createElementNS ("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul", "menuitem");
+							nmi. setAttribute ("value", val);
+							nmi. setAttribute ("label", val);
+							nmi. setAttribute ("src", val);
+							this. menupopup. insertBefore (nmi, this. menupopup. firstChild);
+							this. selectedItem = nmi;
+						}
+					]]>
+				</setter>
+			</property>		
+		</implementation>
+		
+		<handlers>
+			<handler event="focus" phase="capturing">
+				<![CDATA[
+					if (!this. hasAttribute ('focused'))
+					{
+						if (event. originalTarget != this. inputField)
+						  this. inputField. focus();
+						this. setAttribute ("focused", "true");
+					}
+				]]>
+			</handler>
+			
+			<handler event="blur" phase="capturing">
+				<![CDATA[
+					this. removeAttribute ("focused");
+				]]>
+			</handler>
+			
+			<handler event="popupshowing">
+				<![CDATA[
+					if (event. target. parentNode == this)
+					{
+						if (document. commandDispatcher. focusedElement != this. inputField)
+							this. inputField. focus ();
+					}
+				]]>
+			</handler>
+			
+			<handler event="command">
+				<![CDATA[
+					if (event. target. parentNode. parentNode == this)
+						this. selectedItem = event. target;
+				]]>
+			</handler>
+			
+			<handler event="keypress">
+				<![CDATA[
+					if (!event. ctrlKey && !event. shiftKey)
+					{
+						if (event. keyCode == KeyEvent. DOM_VK_UP ||
+							event. keyCode == KeyEvent. DOM_VK_DOWN ||
+							(event. keyCode == KeyEvent. DOM_VK_F4 && !event. altKey))
+						{
+							event. preventDefault ();
+							this. menuBoxObject. openMenu (true);
+							return;
+						}
+					}
+				]]>
+			</handler>
+			
+			<handler event="input">
+				<![CDATA[
+					if (this. selectedItem)
+					{
+						var txt = this. inputField. value;
+						this. selectedItem = null;
+						this. inputField. value = txt;
+					}
+				]]>
+			</handler>
+		</handlers>
+	</binding>
+	
+</bindings>

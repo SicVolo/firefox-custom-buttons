@@ -1,0 +1,20 @@
+<!ENTITY custombuttons "Custom Buttons">
+
+<!ENTITY custombuttons.viewMenu_Item "Додај ново дугме...">
+<!ENTITY custombuttons.buttonPopup.edit "Уреди дугме...">
+<!ENTITY custombuttons.buttonPopup.remove "Обриши дугме">
+<!ENTITY custombuttons.buttonPopup.clone "Умножи дугме">
+<!ENTITY custombuttons.buttonPopup.copyURI "Копирај у оставу">
+<!ENTITY custombuttons.buttonPopup.bookmark "Додај дугме у омиљена">
+<!ENTITY custombuttons.buttonPopup.help "Помоћ за дугме">
+<!ENTITY custombuttons.buttonPopup.update "Ажурирај дугме">
+<!ENTITY custombuttons.buttonPopup.subCall "Прилагођено дугме">
+<!ENTITY custombuttons_prefsDialog.title "Подешавања прилагођених дугмади">
+<!ENTITY custombuttons.prefs.show_apply_button "Прикажи дугме „Сачувај” у уређивачу кôда">
+<!ENTITY custombuttons.prefs.disable_init "Онемогући учитавање дугмади (користите у случају проблема са њима; примењује се само на нове прозоре)">
+<!ENTITY custombuttons.prefs.enable_custombutton_protocol "Омогући дугмад за инсталирање у порукама">
+<!ENTITY custombuttons.prefs.editor_save_size_and_position "Сачувај величину и позицију уређивача одвојено за свако дугме">
+<!ENTITY custombuttons.about.supportPageURL "Страница за подршку">
+
+<!ENTITY custombuttons.addons4.sortname "Name">
+<!ENTITY custombuttons.addons4.nobuttons "You don't have any custom button installed">

@@ -1,0 +1,46 @@
+<!ENTITY editor.dialog.help "Pomoc">
+<!ENTITY editor.dialog.help.accesskey "P">
+<!ENTITY editor.dialog.title "Edycja przycisku">
+<!ENTITY editor.dialog.editexternal "Edytuj zewnętrzne…">
+<!ENTITY editor.name "Nazwa:">
+<!ENTITY editor.name.accesskey "N">
+<!ENTITY editor.name.tooltiptext "Ustala etykietkę przycisku i tekst podpowiedzi">
+<!ENTITY editor.image "Ikona:">
+<!ENTITY editor.image.accesskey "I">
+<!ENTITY editor.select "Przeglądaj…">
+<!ENTITY editor.select.accesskey "r">
+<!ENTITY editor.base64 "➲ base64">
+<!ENTITY editor.base64.accesskey "b">
+<!ENTITY editor.base64.tooltiptext "Konwertuje obrazek ikony do formatu base64 (data:image/png;base64,...)">
+<!ENTITY editor.code "Kod">
+<!ENTITY editor.code.accesskey "K">
+<!ENTITY editor.code.tooltiptext "Uruchamiany po wciśnięciu przycisku">
+<!ENTITY editor.initCode "Kod inicjacji">
+<!ENTITY editor.initCode.accesskey "I">
+<!ENTITY editor.initCode.tooltiptext "Uruchamiany przy starcie przeglądarki">
+<!ENTITY editor.code.defaultValue "/*KOD*/">
+<!ENTITY editor.initCode.defaultValue "/*Kod inicjacji*/">
+<!ENTITY editor.Apply "Zapisz">
+<!ENTITY editor.urlfield "URL przycisku:">
+<!ENTITY editor.urlfield.accesskey "U">
+<!ENTITY editor.buttonSettings "Ustawienia przycisku">
+<!ENTITY editor.buttonSettings.accesskey "U">
+<!ENTITY editor.buttonSettings.tooltiptext "Panel ustawień przycisku">
+<!ENTITY editor.buttonSettings.hotKeyGroupbox "Skróty">
+<!ENTITY editor.buttonSettings.accelkey "Skrót:">
+<!ENTITY editor.buttonSettings.disableDefaultKeyBehavior "Wyłącz domyślną czynność dla określonego skrótu">
+<!ENTITY editor.buttonSettings.addMoreKeys "Więcej…">
+<!ENTITY cbeditor.quickfindtextbox "Znajdź szybko:">
+<!ENTITY finddialog.findtextbox "Znajdź:">
+<!ENTITY finddialog.replacetextbox "Zamień:">
+<!ENTITY finddialog.optionscaption "Opcje">
+<!ENTITY finddialog.casesensitive "Rozróżniaj wielkość znaków">
+<!ENTITY finddialog.prompteachreplace "Potwierdzaj każdą zamianę">
+<!ENTITY finddialog.directioncaption "Kierunek">
+<!ENTITY finddialog.forward "Do przodu">
+<!ENTITY finddialog.backward "Wstecz">
+<!ENTITY repprompt.replace "Zamień">
+<!ENTITY repprompt.cancel "Anuluj">
+<!ENTITY repprompt.skip "Pomiń">
+<!ENTITY repprompt.replaceall "Zamień wszystkie">
+<!ENTITY repprompt.msg "Zamienić?">

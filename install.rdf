@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+	<Description about="urn:mozilla:install-manifest">
+
+		<em:id>custombuttons@xsms.org</em:id>
+		<em:name>Custom Buttons</em:name>
+		<em:type>2</em:type>
+		<em:version>0.0.5.8.9</em:version>
+		<em:description>Gives a possibility to create custom toolbarbuttons.</em:description>
+		<em:creator>Yan</em:creator>
+		<em:developer>Anton (custombuttonsextension@gmail.com)</em:developer>
+		<em:developer>Dark-Demon</em:developer>
+		<em:developer>SCClockDr</em:developer>
+		<em:contributor>Odyseus: bug fixes</em:contributor>
+		<em:contributor>bunda1: outstanding buttons' creator</em:contributor>
+		<em:contributor>morat: bug reports</em:contributor>
+		<em:contributor>okkamas-knife: the founder of the theme "Ready buttons for Custom Buttons" at mozilla-russia.org forum</em:contributor>
+		<em:contributor>razoo: extension's icon author</em:contributor>
+		<em:contributor>Ragnaar: extension's icons author</em:contributor>
+		<em:contributor>Infocatcher: very useful remarks</em:contributor>
+		<em:contributor>LouCypher: bug reports</em:contributor>
+		<em:contributor>Lain_13: useful remarks</em:contributor>
+		<em:contributor>Dimanish: useful remarks</em:contributor>
+		<em:contributor>Other users of forum.mozilla-russia.org (forum.mozilla.ru) and custombuttons.mozdev.org: useful remarks and testing</em:contributor>
+		<em:translator>Odyseus: es-AR localization</em:translator>
+		<em:translator>markh: nl Dutch localization</em:translator>
+		<em:translator>DakSrbija: Serbian localization</em:translator>
+		<em:translator>l0stintranslation: Italian localization</em:translator>
+		<em:translator>maybeecom: Korean localization</em:translator>
+		<em:translator>Ton: Dutch localization</em:translator>
+		<em:translator>Sven Giermann: German localization</em:translator>
+		<em:translator>teo: Polish localization</em:translator>
+		<em:translator>Piotrek (Sullei): Polish localization</em:translator>
+		<em:translator>Cye3s: Chinese (Simplified) localization</em:translator>
+		<em:translator>fang5566: Chinese (Simplified) localization</em:translator>
+		<em:translator>peguca: Portuguese (Brazilian) localization</em:translator>
+		<em:translator>wladow: Slovak localization</em:translator>
+		<em:homepageURL>http://custombuttons.mozdev.org/</em:homepageURL>
+		<em:optionsURL>chrome://custombuttons/content/prefs.xul</em:optionsURL>
+		<em:iconURL>chrome://custombuttons/skin/cbicon.png</em:iconURL>
+		<em:unpack>true</em:unpack>
+		
+		<!-- Firefox -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>1.5</em:minVersion>
+                		<em:maxVersion>48.0a1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<!-- Seamonkey -->
+		<em:targetApplication>
+			<Description>
+			  <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+			  <em:minVersion>2.0</em:minVersion>
+			  <em:maxVersion>2.10a1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<!-- ThunderBird -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
+				<em:minVersion>2.0</em:minVersion>
+				<em:maxVersion>13.0a1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<!-- Flock -->
+		<em:targetApplication>
+			<Description>
+    			<em:id>{a463f10c-3994-11da-9945-000d60ca027b}</em:id>
+				<em:minVersion>0.7</em:minVersion>
+				<em:maxVersion>1.5+</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<!-- Sunbird -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{718e30fb-e89b-41dd-9da7-e25a45638b28}</em:id>
+				<em:minVersion>0.2</em:minVersion>
+				<em:maxVersion>5.0b2pre</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		
+		<!-- KompoZer -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{20aa4150-b5f4-11de-8a39-0800200c9a66}</em:id>
+				<em:minVersion>0.8b1</em:minVersion>
+				<em:maxVersion>0.8b3</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+
+	</Description>
+
+</RDF>

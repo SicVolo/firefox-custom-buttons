@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay [
+<!ENTITY % custombuttonsDTD SYSTEM "chrome://custombuttons/locale/custombuttons.dtd" >
+%custombuttonsDTD;
+]>
+<overlay id="custombuttonsOverlay"
+     xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="custombuttons-template-button"/>
+  </toolbarpalette>
+  <toolbarpalette id="MailToolbarPalette">
+    <toolbarbutton id="custombuttons-template-button"/>
+  </toolbarpalette>
+  <toolbarpalette id="MsgComposeToolbarPalette">
+    <toolbarbutton id="custombuttons-template-button"/>
+  </toolbarpalette>
+</overlay>

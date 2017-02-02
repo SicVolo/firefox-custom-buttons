@@ -1,0 +1,20 @@
+<!ENTITY custombuttons "Custom Buttons">
+
+<!ENTITY custombuttons.viewMenu_Item "Nieuwe knop toevoegen…">
+<!ENTITY custombuttons.buttonPopup.edit "Knop wijzigen…">
+<!ENTITY custombuttons.buttonPopup.remove "Knop verwijderen">
+<!ENTITY custombuttons.buttonPopup.clone "Knop Klonen">
+<!ENTITY custombuttons.buttonPopup.copyURI "Naar klembord kopiëren">
+<!ENTITY custombuttons.buttonPopup.bookmark "Knop Bladwijzer">
+<!ENTITY custombuttons.buttonPopup.help "Knop Help">
+<!ENTITY custombuttons.buttonPopup.update "Knop Bijwerken">
+<!ENTITY custombuttons.buttonPopup.subCall "Knop Aanpassen">
+<!ENTITY custombuttons_prefsDialog.title "Custom Buttons: instellingen">
+<!ENTITY custombuttons.prefs.show_apply_button "Knop ‘Opslaan’ weergeven in codebewerker">
+<!ENTITY custombuttons.prefs.disable_init "Knopinitialisatie uitschakelen (gebruik dit bij problemen met knoppen, wijzigingen hebben alleen effect op nieuwe vensters)">
+<!ENTITY custombuttons.prefs.enable_custombutton_protocol "Installatieknoppen vanuit e-mailberichten inschakelen">
+<!ENTITY custombuttons.prefs.editor_save_size_and_position "Grootte en positie van bewerkingsvensters apart opslaan voor elke aangepaste knop">
+<!ENTITY custombuttons.about.supportPageURL "Ondersteuningspagina bezoeken">
+
+<!ENTITY custombuttons.addons4.sortname "Name">
+<!ENTITY custombuttons.addons4.nobuttons "You don't have any custom button installed">

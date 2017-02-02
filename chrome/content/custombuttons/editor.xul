@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/"?>
+<?xml-stylesheet href="chrome://custombuttons/content/codeeditor.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://custombuttons/locale/editor.dtd">
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		id="custombuttonsEditor"
+		title="&editor.dialog.title;"
+		persist="width height screenX screenY sizemode"
+		buttons="extra1,extra2,accept,cancel"
+		buttonlabelextra1="&editor.dialog.editexternal;"
+		buttonlabelextra2="&editor.Apply;"
+		ondialogextra1="edit_button()"
+		ondialogextra2="editor.updateButton()"
+		buttonaccesskeyextra1="E"
+		onload="editor.init();"
+		ondialogaccept="return editor.onAccept();"
+		ondialogcancel="return editor.onCancel();"
+		onbeforeunload="editor.destroy()"
+		onunload="editor.destroy();">
+
+	<script type="application/x-javascript" src="editor2.js"/>
+	<script type="application/x-javascript" src="editExternal.js"/>
+	
+	<commandset id="custombuttonsEditorCommandSet">
+		<command id="cbUpdateButtonCommand" oncommand="editor.updateButton()"/>
+		<command id="cbExecuteCode" oncommand="editor.execute_oncommand_code()"/>
+		<command id="cbFullScreen" oncommand="editor.fullScreen()"/>
+		<command id="cbCloseDialog" oncommand="editor.acceptDialog()"/>
+	</commandset>
+	
+	<keyset id="custombuttonsEditorKeySet">
+		<key id="cbUpdateButtonKey" command="cbUpdateButtonCommand" key="s" modifiers="control"/>
+		<key id="cbExecuteCode" command="cbExecuteCode" keycode="VK_F9"/>
+		<key id="cbFullScreen" command="cbFullScreen" keycode="VK_F11"/>
+		<key id="cbCloseDialog" command="cbCloseDialog" keycode="VK_RETURN" modifiers="control"/>
+	</keyset>
+	
+	<grid id="urlfield">
+		<columns>
+			<column/>
+			<column flex="1"/>
+		</columns>
+	
+		<rows>
+			<row align="center">
+				<label value="&editor.urlfield;" accesskey="&editor.urlfield.accesskey;" control="urlfield-textbox"/>
+				<textbox id="urlfield-textbox" flex="1"/>
+			</row>
+		</rows>
+	</grid>
+	
+	<grid>
+		<columns>
+			<column/>
+			<column flex="1"/>
+		</columns>
+		<rows>
+			<row align="center">
+				<label value="&editor.name;" tooltiptext="&editor.name.tooltiptext;" accesskey="&editor.name.accesskey;" control="name"/>
+				<textbox id="name" flex="1"/>
+			</row>
+			<row align="center">
+				<label value="&editor.image;" accesskey="&editor.image.accesskey;" control="image"/>
+				<hbox>
+					<menulist id="image" class="menulist-iconic" flex="1"
+							  onselect="editor.imageChanged()">
+						<menupopup>
+							<menuitem value="custombuttons-stdicon-1"/>
+							<menuitem value="custombuttons-stdicon-2"/>
+							<menuitem value="custombuttons-stdicon-3"/>
+							<menuitem value="custombuttons-stdicon-4"/>
+						</menupopup>
+					</menulist>
+					<button label="&editor.select;" accesskey="&editor.select.accesskey;"
+							oncommand="editor.selectImage();"/>
+					<button label="&editor.base64;" accesskey="&editor.base64.accesskey;"
+							oncommand="editor.convert_image();"
+							tooltiptext="&editor.base64.tooltiptext;"/>
+				</hbox>
+			</row>
+		</rows>
+	</grid>
+	<tabbox  flex="1" id="custombuttons-editbutton-tabbox"
+			 handleCtrlTab="true" handleCtrlPageUpDown="true"
+			 persist="selectedIndex">
+		<tabs oncommand="editor.tabSelect(event);">
+			<tab id="code-tab" accesskey="&editor.code.accesskey;" cbcontrol="code"
+				 label="&editor.code;" tooltiptext="&editor.code.tooltiptext;"/>
+			<tab id="init-tab" label="&editor.initCode;" accesskey="&editor.initCode.accesskey;" cbcontrol="initCode"
+				 tooltiptext="&editor.initCode.tooltiptext;"/>
+			<tab label="&editor.dialog.help;" accesskey="&editor.dialog.help.accesskey;" cbcontrol="help"
+				 tooltiptext="&editor.dialog.help;"/>
+			<tab label="&editor.buttonSettings;" accesskey="&editor.buttonSettings.accesskey;"
+				 tooltiptext="&editor.buttonSettings.tooltiptext;"/>
+		</tabs>
+		<tabpanels flex="1">
+			<cbeditor class="custombuttons-editor-codeBox"
+					  id="code" multiline="true" flex="1"
+					  onclick="gmon_edit_mouseclick(event);"
+					  value="&editor.code.defaultValue;"/>
+			<cbeditor  class="custombuttons-editor-codeBox"
+					  id="initCode" multiline="true" flex="1"
+					  onclick="gmon_edit_mouseclick(event);"
+					  value="&editor.initCode.defaultValue;"/>
+			<cbeditor  class="custombuttons-editor-codeBox"
+					  id="help" multiline="true" flex="1"
+					  onclick="gmon_edit_mouseclick(event);"
+					  value=""/>
+			<vbox>
+				<groupbox flex="1">
+					<caption label="&editor.buttonSettings.hotKeyGroupbox;"/>
+					<grid>
+						<columns>
+							<column/>
+							<column/>
+						</columns>
+						<rows>
+							<row align="center">
+								<label value="&editor.buttonSettings.accelkey;"/>
+								<textbox id="accelkey" flex="1"/>
+							</row>
+						</rows>
+					</grid>
+					<checkbox id="disableDefaultKeyBehavior"
+							  label="&editor.buttonSettings.disableDefaultKeyBehavior;"/>
+				</groupbox>
+			</vbox>
+		</tabpanels>
+	</tabbox>
+
+</dialog>

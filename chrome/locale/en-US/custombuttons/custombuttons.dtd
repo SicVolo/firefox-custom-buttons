@@ -1,0 +1,22 @@
+<!ENTITY custombuttons "Custom Buttons">
+
+<!ENTITY custombuttons.viewMenu_Item "Add new button…">
+<!ENTITY custombuttons.buttonPopup.edit "Edit button…">
+<!ENTITY custombuttons.buttonPopup.remove "Delete button">
+<!ENTITY custombuttons.buttonPopup.clone "Clone button">
+<!ENTITY custombuttons.buttonPopup.copyURI "Copy to clipboard">
+<!ENTITY custombuttons.buttonPopup.bookmark "Bookmark Button">
+<!ENTITY custombuttons.buttonPopup.help "Button Help">
+<!ENTITY custombuttons.buttonPopup.update "Update Button">
+<!ENTITY custombuttons.buttonPopup.subCall "Custom Button">
+
+<!ENTITY custombuttons_prefsDialog.title "Custom Buttons: settings">
+<!ENTITY custombuttons.prefs.show_apply_button "Show &quot;Save&quot; button in code editor">
+<!ENTITY custombuttons.prefs.disable_init "Disable buttons initialization (use in case of problems with buttons, changes affect only new windows)">
+<!ENTITY custombuttons.prefs.enable_custombutton_protocol "Enable install buttons from mail messages">
+<!ENTITY custombuttons.prefs.editor_save_size_and_position "Save size and position of editor windows separately for each custom button">
+
+<!ENTITY custombuttons.about.supportPageURL "Visit support page">
+
+<!ENTITY custombuttons.addons4.sortname "Name">
+<!ENTITY custombuttons.addons4.nobuttons "You don't have any custom button installed">

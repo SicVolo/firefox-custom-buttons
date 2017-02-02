@@ -1,0 +1,46 @@
+<!ENTITY editor.dialog.help "Contenuti guida del pulsante">
+<!ENTITY editor.dialog.help.accesskey "u">
+<!ENTITY editor.dialog.title "Modifica del pulsante">
+<!ENTITY editor.dialog.editexternal "Edit external…">
+<!ENTITY editor.name "Nome:">
+<!ENTITY editor.name.accesskey "N">
+<!ENTITY editor.name.tooltiptext "Definisce l'etichetta del pulsante ed il testo del tooltip">
+<!ENTITY editor.image "Immagine:">
+<!ENTITY editor.image.accesskey "m">
+<!ENTITY editor.select "Sfoglia…">
+<!ENTITY editor.select.accesskey "o">
+<!ENTITY editor.base64 "&amp;#8658; base64">
+<!ENTITY editor.base64.accesskey "b">
+<!ENTITY editor.base64.tooltiptext "Converte l'immagine nel formato base64 (data:image/png;base64,…)">
+<!ENTITY editor.code "Codice">
+<!ENTITY editor.code.accesskey "C">
+<!ENTITY editor.code.tooltiptext "Codice da eseguire alla pressione del pulsante">
+<!ENTITY editor.initCode "Codice da eseguire all'avvio">
+<!ENTITY editor.initCode.accesskey "d">
+<!ENTITY editor.initCode.tooltiptext "Codice da eseguire all'avvio del browser">
+<!ENTITY editor.code.defaultValue "/*CODICE*/">
+<!ENTITY editor.initCode.defaultValue "/*Codice eseguito all'avvio*/">
+<!ENTITY editor.Apply "Applica">
+<!ENTITY editor.urlfield "Sito web del pulsante:">
+<!ENTITY editor.urlfield.accesskey "w">
+<!ENTITY editor.buttonSettings "Impostazioni del pulsante">
+<!ENTITY editor.buttonSettings.accesskey "s">
+<!ENTITY editor.buttonSettings.tooltiptext "Impostazioni del pulsante">
+<!ENTITY editor.buttonSettings.hotKeyGroupbox "Scorciatoie da tastiera">
+<!ENTITY editor.buttonSettings.accelkey "Scorciatoia da tastiera:">
+<!ENTITY editor.buttonSettings.disableDefaultKeyBehavior "Disattiva l'azione predefinita per la scorciatoia da tastiera specificata">
+<!ENTITY editor.buttonSettings.addMoreKeys "Altre scorciatoie da tastiera…">
+<!ENTITY cbeditor.quickfindtextbox "Ricerca rapida: ">
+<!ENTITY finddialog.findtextbox "Trova: ">
+<!ENTITY finddialog.replacetextbox "Sostituisci con: ">
+<!ENTITY finddialog.optionscaption "Opzioni">
+<!ENTITY finddialog.casesensitive "Maiuscole/minuscole">
+<!ENTITY finddialog.prompteachreplace "Conferma ogni sostituzione">
+<!ENTITY finddialog.directioncaption "Direzione">
+<!ENTITY finddialog.forward "Avanti">
+<!ENTITY finddialog.backward "Indietro">
+<!ENTITY repprompt.replace "Sostituisci">
+<!ENTITY repprompt.cancel "Annulla">
+<!ENTITY repprompt.skip "Ignora">
+<!ENTITY repprompt.replaceall "Sostituisci tutto">
+<!ENTITY repprompt.msg "Selezionare l'azione da eseguire">

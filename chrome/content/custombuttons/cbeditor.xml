@@ -1,0 +1,865 @@
+<?xml version="1.0"?>
+
+<!--
+// ***** BEGIN LICENSE BLOCK *****
+// Version: MPL 1.1
+// 
+// The contents of this file are subject to the Mozilla Public License Version
+// 1.1 (the "License"); you may not use this file except in compliance with
+// the License. You may obtain a copy of the License at
+// http://www.mozilla.org/MPL/
+// 
+// Software distributed under the License is distributed on an "AS IS" basis,
+// WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+// for the specific language governing rights and limitations under the
+// License.
+// 
+// Custom Buttons:
+// - Gives a possibility to create custom toolbarbuttons.
+// - This component implements custom buttons code editor
+// 
+// Author: Anton Glazatov (c) 2009
+// 
+// ***** END LICENSE BLOCK *****
+-->
+
+<!DOCTYPE dialog SYSTEM "chrome://custombuttons/locale/editor.dtd">
+
+<bindings id="editorBindings"
+		  xmlns="http://www.mozilla.org/xbl"
+		  xmlns:html="http://www.w3.org/1999/xhtml"
+		  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		  xmlns:xbl="http://www.mozilla.org/xbl">
+
+	<binding id="accelkeytextboxbinding" extends="chrome://global/content/bindings/textbox.xml#textbox">
+		<implementation>
+		<constructor>
+			<![CDATA[
+				this. inputField. setAttribute ("oncontextmenu", "event.preventDefault()");
+			]]>
+		</constructor>
+		
+		<field name="_bExtendedMode">false</field>
+		<property name="bExtendedMode">
+			<getter>
+				return this. _bExtendedMode;
+			</getter>
+			
+			<setter>
+				this. setAttribute ("bExtendedMode", val);
+				this. _bExtendedMode = val;
+				return this. _bExtendedMode;
+			</setter>
+		</property>
+		
+		<property name="value">
+			<getter>
+				<![CDATA[
+					return this. inputField. value;
+				]]>
+			</getter>
+			
+			<setter>
+				<![CDATA[
+					if (this. hasAttribute ("cbCommandUpdate"))
+					{
+						var cmd = document. getElementById (this. getAttribute ("cbCommandUpdate"));
+						if (val == "")
+						{
+							cmd. setAttribute ("disabled", "true");
+						}
+						else
+						{
+							if (cmd. hasAttribute ("disabled"))
+								cmd. removeAttribute ("disabled");
+						}
+					}
+					this. inputField. value = val;
+				]]>
+			</setter>
+		</property>
+		
+		<method name="cbUpdateCommand">
+		<body>
+		<![CDATA[
+		]]>
+		</body>
+		</method>
+		
+		</implementation>
+		
+		<handlers>
+			<handler event="keypress" phase="capturing">
+				<![CDATA[
+					var cbd = Components. classes ["@xsms.nm.ru/custombuttons/cbkeymap;1"].
+					getService (Components. interfaces. cbIKeyMapService);
+					var key = cbd. getKey (event);
+					if (key == "ESCAPE")
+					{
+						event. preventDefault ();
+						if (this. value != "")
+						{
+							this. bExtendedMode = false;
+							this. value = "";
+							return;
+						}
+						if (!this. bExtendedMode)
+						{
+							this. bExtendedMode = true;
+							return;
+						}
+					}
+					if (key == "TAB")
+					{
+						if (!this. bExtendedMode)
+							return;
+						this. bExtendedMode = false;
+						if (this. value != "")
+							return;
+						event. preventDefault ();
+					}
+					this. bExtendedMode = false;
+					var prefix = cbd. getKeyPrefix (event);
+					this. value = prefix + key;
+					event. preventDefault ();
+					event. stopPropagation ();
+				]]>
+			</handler>
+		</handlers>
+	</binding>
+
+	<binding id="custombuttons-codeeditor" display="xul:textbox">
+		<content>
+		
+			<xul:vbox flex="1" class="cbeditor-container">
+				<xul:textbox flex="1" multiline="true"
+							 anonid="textbox" class="cbeditor-textbox"
+							 xbl:inherits="value"/>
+				<xul:toolbox>
+					<xul:toolbar anonid="findbar" hidden="true">
+						<xul:hbox align="center" flex="1">
+						    <xul:label value="&cbeditor.quickfindtextbox;"/>
+						    <xul:textbox flex="1" anonid="qstextbox"/>
+						</xul:hbox>
+					</xul:toolbar>
+				</xul:toolbox>
+			</xul:vbox>
+		</content>
+		
+		<implementation implements="nsIEditorObserver">
+			<constructor>
+				<![CDATA[
+					this. editor. transactionManager. clear ();
+					var ps = Components. classes ["@mozilla.org/preferences-service;1"].
+						 getService (Components. interfaces. nsIPrefService).
+						 getBranch ("extensions.custombuttons.editor.");
+					var wrapWidth = -1;
+					if (ps. prefHasUserValue ("wrapWidth"))
+						wrapWidth = ps. getIntPref ("wrapWidth");
+					if (this. hasAttribute ("wrapWidth"))
+						wrapWidth = this. getAttribute ("wrapWidth");
+					if ((wrapWidth != 0) && (wrapWidth != -1))
+						wrapWidth = -1;
+					this. editor. wrapWidth = wrapWidth;
+					this. finder = Components. classes ["@mozilla.org/embedcomp/rangefind;1"].
+								   createInstance (Components. interfaces. nsIFind);
+				]]>
+			</constructor>
+
+			<field name="_observer">null</field>
+
+			<method name="addEditorObserver">
+			  <parameter name="aObserver"/>
+			  <body>
+			    <![CDATA[
+			    	if (this. _observer)
+			    		throw "Can't add another observer";
+			    	this. _observer = aObserver;
+			    ]]>
+			  </body>
+			</method>
+
+			<method name="removeEditorObserver">
+			  <parameter name="aObserver"/>
+			  <body>
+			    <![CDATA[
+			    	this. _observer = null;
+			    ]]>
+			  </body>
+			</method>
+
+			<method name="EditAction">
+			  <body>
+			    <![CDATA[
+				if (this. _observer)
+				    this. _observer. EditAction ();
+			    ]]>
+			  </body>
+			</method>
+			
+			<field name="fastFindMode">false</field>
+			<field name="searchRange">null</field>
+			<field name="beginPt">null</field>
+			<field name="endPt">null</field>
+			<field name="finder">null</field>
+			<field name="searchString">""</field>
+			<field name="replaceText">""</field>
+			<field name="caseSensitive">false</field>
+			<field name="promptReplace">true</field>
+			<field name="searchBackwards">false</field>
+			<field name="currentIndent">0</field>
+			<field name="_ss">0</field> <!-- these fields is used to restore selection after unwrap -->
+			<field name="_se">0</field>
+			
+			<property name="textbox" readonly="true"
+					  onget="return document. getAnonymousElementByAttribute (this, 'anonid', 'textbox')"/>
+			
+			<property name="qsTextbox" readonly="true"
+					  onget="return document. getAnonymousElementByAttribute (this, 'anonid', 'qstextbox')"/>
+			
+			<property name="editor" readonly="true">
+				<getter>
+					<![CDATA[
+						var inputField = this. textbox. inputField;
+						var editor = inputField. QueryInterface (Components. interfaces. nsIDOMNSEditableElement). editor;
+						editor = editor. QueryInterface (Components. interfaces. nsIEditor);
+						editor = editor. QueryInterface (Components. interfaces. nsIPlaintextEditor);
+						return editor;
+					]]>
+				</getter>
+			</property>
+			
+			<property name="value" onget="return this.textbox.value;"
+				  onset="return this.textbox.value=val;"/>
+
+			<method name="focus">
+			  <body>
+			    <![CDATA[
+				this. textbox. focus ();
+			    ]]>
+			  </body>
+			</method>
+
+			<method name="blur">
+			  <body>
+			    <![CDATA[
+				this. textbox. blur ();
+			    ]]>
+			  </body>
+			</method>
+
+			<method name="moveCaret">
+			  <parameter name="moveLeft"/>
+			  <parameter name="event"/>
+			  <body>
+			    <![CDATA[
+				     var inputField = this. textbox. inputField;
+				     var ss = inputField. selectionStart;
+				     var se = inputField. selectionEnd;
+				     if(ss != se)
+				     {
+				     	event. preventDefault ();
+				     	inputField. selectionStart = inputField. selectionEnd = moveLeft? ss: se;
+					this. scrollSelectionIntoView ();
+				     }
+			    ]]>
+			  </body>
+			</method>
+			
+			<method name="setSelection">
+				<parameter name="selectionStart"/>
+				<parameter name="selectionEnd"/>
+				<body>
+					<![CDATA[
+						this. textbox. selectionStart = selectionStart;
+						this. textbox. selectionEnd = selectionEnd;
+					]]>
+				</body>
+			</method>
+			
+			<method name="wrapSelection">
+				<body>
+					<![CDATA[
+						this. _ss = this. textbox. selectionStart;
+						this. _se = this. textbox. selectionEnd;
+						var range = this. editor. selection. getRangeAt (0);
+						var doc = this. editor. document;
+						var spn = doc. createElementNS ("http://www.w3.org/1999/xhtml", "span");
+						spn. setAttribute
+						(
+							"style",
+							"background-color: Highlight; color: white;  " +
+							"display: inline; font-size: inherit; padding: 0;"
+						);
+						spn. setAttribute ("id", "__selection_wrapper__");
+						range. surroundContents (spn);
+					]]>
+				</body>
+			</method>
+			
+			<method name="unwrapSelection">
+				<body>
+					<![CDATA[
+						var doc = this. editor. document;
+						var spn = doc. getElementById ("__selection_wrapper__");
+						if (!spn)
+							return;
+						var parent = spn. parentNode;
+						var next = spn. nextSibling;
+						var docfrag = doc. createDocumentFragment ();
+						while (spn. hasChildNodes ())
+							docfrag. appendChild (spn. firstChild);
+						parent. removeChild (spn);
+						parent. insertBefore (docfrag, next);
+						parent. normalize ();
+						this. setSelection (this. _ss, this. _se);
+					]]>
+				</body>
+			</method>
+			
+			<method name="setRanges">
+				<body>
+					<![CDATA[
+						var doc = this. editor. document;
+						var body = this. editor. rootElement;
+						var count = body. childNodes. length;
+						
+						this. searchRange = doc. createRange ();
+						this. beginPt = doc. createRange ();
+						this. endPt = doc. createRange ();
+				
+						this. searchRange. setStart (body, 0);
+						this. searchRange. setEnd (body, count);
+				
+						this. beginPt. setStart (body, 0);
+						this. beginPt. setEnd (body, 0);
+						
+						this. endPt. setStart (body, count);
+						this. endPt. setEnd (body, count);
+					]]>
+				</body>
+			</method>
+			
+			<method name="replaceAll">
+				<body>
+					<![CDATA[
+						this. makeReplace ();
+						while (this. find (false))
+							this. insertText (this. replaceText);
+						this. stopReplace ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="stopReplace">
+				<body>
+					<![CDATA[
+						this. unwrapSelection ();
+						var range = this. editor. selection. getRangeAt (0);
+						range. collapse (this. searchBackwards);
+						this. textbox. focus ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="skipReplace">
+				<body>
+					<![CDATA[
+						var range = this. editor. selection. getRangeAt (0);
+						range. collapse (this. searchBackwards);
+						return this. find (false);
+					]]>
+				</body>
+			</method>
+			
+			<method name="makeReplace">
+				<body>
+					<![CDATA[
+						this. unwrapSelection ();
+						this. insertText (this. replaceText);
+					]]>
+				</body>
+			</method>
+			
+			<method name="searchAndReplace">
+				<parameter name="event"/>
+				<body>
+					<![CDATA[
+						this. setRanges ();
+						this. setSearchParameters ("replace", event. shiftKey);
+						if (!this. searchString)
+							return;
+						if (!this. find (false))
+							return;
+						this. wrapSelection ();
+						if (this. promptReplace)
+						{
+							window. openDialog
+							(
+								"chrome://custombuttons/content/dialogs/replconfirm.xul",
+								"_blank",
+								"chrome,modal,resizable=no,dependent=yes",
+								this
+							);
+						}
+						else
+							this. replaceAll ();
+						this. textbox. focus ();
+						return;
+					]]>
+				</body>
+			</method>
+
+			<method name="getSelection">
+				<body>
+					<![CDATA[
+						var ss = this. textbox. selectionStart;
+						var se = this. textbox. selectionEnd;
+						return this. textbox. value. substring (ss, se);
+					]]>
+				</body>
+			</method>
+			
+			<method name="setSearchParameters">
+				<parameter name="dialogType"/>
+				<parameter name="searchBackwards"/>
+				<body>
+					<![CDATA[
+						var selstr = this. getSelection ();
+						var param =
+						{
+							type: dialogType,
+							searchString: selstr,
+							replaceText: "",
+							caseSensitive: this. caseSensitive,
+							promptReplace: this. promptReplace,
+							searchBackwards: searchBackwards
+						};
+						window. openDialog
+						(
+							"chrome://custombuttons/content/dialogs/finddialog.xul",
+							"_blank",
+							"chrome,modal,resizable=no,dependent=yes",
+							param
+						);
+						this. searchString = param. searchString;
+						this. replaceText = param. replaceText;
+						this. caseSensitive = param. caseSensitive;
+						this. promptReplace = param. promptReplace;
+						this. searchBackwards = param. searchBackwards;
+					]]>
+				</body>
+			</method>
+			
+			<method name="newSearch">
+				<parameter name="findBackwards"/>
+				<body>
+					<![CDATA[
+						this. setSearchParameters ("find", findBackwards);
+						if (!this. searchString)
+							return;
+						this. find (false);
+						this. textbox. focus ();
+					]]>
+				</body>
+			</method>
+
+			<method name="findForward">
+				<parameter name="event"/>
+				<body>
+					<![CDATA[
+						if (event. originalTarget == this. qsTextbox. inputField)
+						{
+							this. findNext (false);
+							event. preventDefault ();
+						}
+					]]>
+				</body>
+			</method>
+
+			<method name="findBackward">
+				<parameter name="event"/>
+				<body>
+					<![CDATA[
+						if (event. originalTarget == this. qsTextbox. inputField)
+						{
+							this. findNext (true);
+							event. preventDefault ();
+						}
+					]]>
+				</body>
+			</method>
+
+			<method name="findNext">
+				<parameter name="findBackwards"/>
+				<body>
+					<![CDATA[
+						this. searchBackwards = findBackwards;
+						var fe = document. commandDispatcher. focusedElement;
+						if (fe == this. qsTextbox. inputField)
+						{
+							this. find (false);
+							return;
+						}
+						if (!this. searchString)
+							this. newSearch (findBackwards);
+						else
+							this. find (false);
+						this. textbox. focus ();
+					]]>
+				</body>
+			</method>
+
+			<method name="find">
+				<parameter name="incrementalSearch"/>
+				<body>
+					<![CDATA[
+						this. unwrapSelection ();
+						if (!this. searchString)
+							return false;
+						this. setRanges ();
+						var range = this. editor. selection. getRangeAt (0);
+						var startPt = this. beginPt;
+						startPt = range. cloneRange ();
+						if (!incrementalSearch)
+							startPt. collapse (this. searchBackwards);
+							
+						this. finder. findBackwards = this. searchBackwards;
+						this. finder. caseSensitive = this. caseSensitive;
+						var retRange = this. finder. Find (this. searchString, this. searchRange, startPt, this. endPt);
+						if (!retRange)
+							return false;
+						this. editor. selection. removeRange (range);
+						this. editor. selection. addRange (retRange);
+						this. scrollSelectionIntoView ();
+						return true;
+					]]>
+				</body>
+			</method>
+			
+			<method name="onInput">
+				<parameter name="event"/>
+				<body>
+					<![CDATA[
+						this. fastFindMode = true;
+						this. searchString = this. qsTextbox. value;
+						this. find (true);
+						var selectionType = Components. interfaces. nsISelectionController. SELECTION_ATTENTION;
+						this. editor. selectionController. setDisplaySelection (selectionType);
+					]]>
+				</body>
+			</method>
+			
+			<method name="onBlur">
+				<body>
+					<![CDATA[
+						if (this. fastFindMode)
+							this. endFastFind ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="endFastFind">
+				<body>
+					<![CDATA[
+						var selectionType = Components. interfaces. nsISelectionController. SELECTION_NORMAL;
+						this. editor. selectionController. setDisplaySelection (selectionType);
+						this. fastFindMode = false;
+						var fb = document. getAnonymousElementByAttribute (this, "anonid", "findbar");
+						fb. setAttribute ("hidden", "true");
+						this. qsTextbox. value = "";
+						this. textbox. focus ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="startFastFind">
+				<parameter name="event"/>
+				<body>
+					<![CDATA[
+						this. searchBackwards = false;
+						this. caseSensitive = false;
+						var fb = document. getAnonymousElementByAttribute (this, "anonid", "findbar");
+						fb. removeAttribute ("hidden");
+                                                var sel = this. getSelection ();
+						this. qsTextbox. inputField. focus ();
+                                                if (sel)
+                                                {
+                                                    this. textbox. selectionEnd = this. textbox. selectionEnd;
+                                                    this. qsTextbox. value = sel;
+                                                    this. onInput (null);
+                                                }
+					]]>
+				</body>
+			</method>
+			
+			<method name="handleTabs">
+				<parameter name="event"/>
+				<body>
+					<![CDATA[
+						if (event. originalTarget == this. textbox. inputField)
+						{
+							if (event. shiftKey)
+								this. outdentSelection ();
+							else
+								this. indentSelection ();
+							event. preventDefault ();
+						}
+					]]>
+				</body>
+			</method>
+			
+			<method name="indentSelection">
+				<body>
+					<![CDATA[
+						if (this. textbox. selectionStart == this. textbox. selectionEnd)
+						{
+							this. insertText ("\t");
+							return;
+						}
+						this. indent ("indent", "", "\t");
+						this. textbox. focus ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="outdentSelection">
+				<body>
+					<![CDATA[
+						if (this. textbox. selectionStart == this. textbox. selectionEnd)
+							return;
+						var pRe = new RegExp ("(^ {0,7}\t)|(^ {1,8})");
+						this. indent ("outdent", pRe, "");
+						this. textbox. focus ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="scrollSelectionIntoView">
+				<body>
+					<![CDATA[
+						try
+						{
+							this. editor. selectionController. scrollSelectionIntoView
+							(
+								Components. interfaces. nsISelectionController. SELECTION_NORMAL,
+								Components. interfaces. nsISelectionController. SELECTION_ANCHOR_REGION,
+								true
+							);
+						}
+						catch (e) {}
+					]]>
+				</body>
+			</method>
+			
+			<method name="scrollTo">
+				<parameter name="lineNumber"/>
+				<body>
+					<![CDATA[
+						this. editor. beginningOfDocument ();
+						var brs = this. textbox. value. replace (/[^\n]/g, "");
+						if (lineNumber > brs. length)
+						{
+							this. editor. endOfDocument ();
+							this. editor. selectionController. intraLineMove (false, false);
+						}
+						else
+							while (lineNumber-- > 1)
+								this. editor. selectionController. lineMove (true, false);
+						this. scrollSelectionIntoView ();
+						this. textbox. focus ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="selectLine">
+				<parameter name="lineNumber"/>
+				<body>
+					<![CDATA[
+						this. scrollTo (lineNumber);
+						this. editor. selectionController. intraLineMove (true, true);
+						this. textbox. focus ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="goToLine">
+				<body>
+					<![CDATA[
+						var ps = Components. classes ["@mozilla.org/embedcomp/prompt-service;1"].
+								 getService (Components. interfaces. nsIPromptService);
+						var num = { value: "" };
+						var res = ps. prompt (window, "Goto Line...", "Enter line number:", num, null, {});
+						num = parseInt (num. value);
+						if (!isFinite (num))
+							return;
+						this. scrollTo (num);
+					]]>
+				</body>
+			</method>
+			
+			<method name="toggleWrapLines">
+				<body>
+					<![CDATA[
+						var wrapWidth = -1 - this. editor. wrapWidth;
+						this. editor. wrapWidth = wrapWidth;
+						this. setAttribute ("wrapWidth", wrapWidth);
+						document. persist (this. id, "wrapWidth");
+						this. scrollSelectionIntoView ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="toggleComments">
+				<body>
+					<![CDATA[
+						var pRe = new RegExp ("^//");
+						this. indent ("toggle", pRe, "//");
+						this. textbox. focus ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="indent">
+				<parameter name="action"/>
+				<parameter name="patRe"/>
+				<parameter name="jStr"/>
+				<body>
+					<![CDATA[
+						var ss = this. textbox. selectionStart;
+						var se = this. textbox. selectionEnd;
+						var selstr = this. getSelection ();
+						var bes = this. value. substring (0, ss);
+						var li = bes. lastIndexOf ("\n");
+						li++;
+						selstr = bes. substring (li) + selstr;
+						if (action == "toggle")
+							action = patRe. test (selstr)? "outdent": "indent";
+						if (action == "indent")
+							selstr = jStr + selstr;
+						var lines = selstr. split ("\n");
+						var jsl = jStr. length;
+						var insertionCount = lines. length;
+						var fLInsCount = 1;
+						if (action == "outdent")
+						{
+							jStr = "";
+							insertionCount = 0;
+							fLInsCount = 0;
+							var line;
+							for (var i = 0; i < lines. length; i++)
+							{
+								if (patRe. test (lines [i]))
+								{
+									line = lines [i]. replace (patRe, "");
+									insertionCount += lines [i]. length - line. length;
+									lines [i] = line;
+									if (i == 0)
+										fLInsCount = insertionCount;
+								}
+							}
+						}
+						selstr = lines. join ("\n" + jStr);
+						this. setSelection (li, se);
+						this. insertText (selstr);
+						var d = (action == "indent")? jsl: -1;
+						this. setSelection (ss + d * fLInsCount, se + d * insertionCount);
+					]]>
+				</body>
+			</method>
+			
+			<method name="setNewLineIndent">
+				<parameter name="event"/>
+				<body>
+					<![CDATA[
+						var ss = this. textbox. selectionStart;
+						var bes = this. value. substring (0, ss);
+						var li = bes. lastIndexOf ("\n");
+						var indent = bes. substring (li + 1). match (/^([ \t]*)?/) [0];
+						this. insertText ("\n" + indent);
+						event. preventDefault ();
+					]]>
+				</body>
+			</method>
+			
+			<method name="insertText">
+				<parameter name="text"/>
+				<body>
+					<![CDATA[
+						if (text)
+							this. editor. insertText (text);
+						else
+							this. editor. deleteSelection (0);
+					]]>
+				</body>
+			</method>
+		</implementation>
+		
+		<handlers>
+			<handler event="keypress" keycode="VK_TAB" action="this.handleTabs(event)"/>
+			<handler event="keypress" keycode="VK_TAB" action="this.handleTabs(event)" modifiers="shift"/>
+			<handler event="keypress" keycode="VK_F3" action="this.findNext(event.shiftKey)"/>
+			<handler event="keypress" keycode="VK_F3" action="this.findNext(event.shiftKey)" modifiers="shift"/>
+			<handler event="keypress" key="a" action="event.preventDefault();this.toggleComments()" modifiers="control,shift"/>
+			<handler event="keypress" key="g" action="this.goToLine()" modifiers="control"/>
+			<handler event="keypress" key="f" action="this.newSearch(false)" modifiers="control"/>
+			<handler event="keypress" key="f" action="this.newSearch(true)" modifiers="control,shift"/>
+			<handler event="keypress" key="h" action="this.searchAndReplace(event)" modifiers="control"/>
+			<handler event="keypress" key="h" action="this.searchAndReplace(event)" modifiers="control,shift"/>
+			<handler event="keypress" key="w" action="this.toggleWrapLines()" modifiers="control"/>
+			<handler event="keypress" key="/" action="this.startFastFind()" modifiers="control" preventdefault="true"/>
+			<handler event="keypress" keycode="VK_LEFT" action="this.moveCaret(true, event);"/>
+			<handler event="keypress" keycode="VK_RIGHT" action="this.moveCaret(false, event);"/>
+			
+			<handler event="keypress" keycode="VK_ESCAPE">
+				<![CDATA[
+					if (event. originalTarget == this. qsTextbox. inputField)
+					{
+						this. endFastFind ();
+						event. preventDefault ();
+					}
+				]]>
+			</handler>
+			
+			<handler event="keypress" keycode="VK_UP" action="this.findBackward(event)"/>
+			<handler event="keypress" keycode="VK_DOWN" action="this.findForward(event)"/>
+
+			<handler event="keypress" keycode="VK_RETURN">
+				<![CDATA[
+					if (event. originalTarget == this. textbox. inputField)
+					{
+						this. setNewLineIndent (event);
+						this. EditAction ();
+					}
+					this. findForward (event);
+				]]>
+			</handler>
+
+			<handler event="keypress" keycode="VK_RETURN" modifiers="shift" action="this.findBackward(event)"/>
+			
+			<handler event="blur">
+				<![CDATA[
+					if (event. originalTarget == this. qsTextbox. inputField)
+						this. onBlur ();
+				]]>
+			</handler>
+			
+			<handler event="input">
+				<![CDATA[
+					if (event. originalTarget == this. qsTextbox. inputField)
+						this. onInput (event);
+					else if (event. originalTarget == this. textbox. inputField)
+						this. EditAction ();
+				]]>
+			</handler>
+			
+			<handler event="change">
+				<![CDATA[
+					if (event. originalTarget == this. qsTextbox. inputField)
+						this. endFastFind ();
+				]]>
+			</handler>
+		</handlers>
+	</binding>
+	
+</bindings>

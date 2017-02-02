@@ -1,0 +1,17 @@
+/********** toolbarbutton **********/
+/* 'workaround' for https://bugzilla.mozilla.org/show_bug.cgi?id=409786 */
+toolbarpaletteitem > toolbarbutton[id^='custombuttons-button']{
+  -moz-binding: url("chrome://custombuttons/content/toolbarbutton.xml#toolbarbutton");
+}
+
+toolbarpaletteitem > toolbarbutton[id^='custombuttons-button'][type="menu"]{
+  -moz-binding: url("chrome://custombuttons/content/toolbarbutton.xml#menu");
+}
+
+toolbarpaletteitem > toolbarbutton[id^='custombuttons-button'][type="menu-button"]{
+  -moz-binding: url("chrome://custombuttons/content/toolbarbutton.xml#menu-button");
+}
+
+toolbarpaletteitem > toolbarbutton[id^='custombuttons-button'][type="menu-vertical"]{
+  -moz-binding: url("chrome://custombuttons/content/toolbarbutton.xml#menu-vertical");
+}

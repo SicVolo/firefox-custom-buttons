@@ -1,0 +1,49 @@
+<!ENTITY editor.dialog.help "Справка">
+<!ENTITY editor.dialog.help.accesskey "H">
+<!ENTITY editor.dialog.title "Редактирование кнопки">
+<!ENTITY editor.dialog.editexternal "Внешний редактор…">
+<!ENTITY editor.name "Имя:">
+<!ENTITY editor.name.accesskey "N">
+<!ENTITY editor.name.tooltiptext "Задаёт надпись на кнопке и всплывающую подсказку">
+<!ENTITY editor.image "Изображение:">
+<!ENTITY editor.image.accesskey "m">
+<!ENTITY editor.select "Обзор…">
+<!ENTITY editor.select.accesskey "o">
+<!ENTITY editor.base64 "&#8658; base64">
+<!ENTITY editor.base64.accesskey "b">
+<!ENTITY editor.base64.tooltiptext "Преобразовать изображение в формат base64 (data:image/png;base64,...)">
+<!ENTITY editor.code "Код">
+<!ENTITY editor.code.accesskey "C">
+<!ENTITY editor.code.tooltiptext "Выполняется при нажатии на кнопку">
+<!ENTITY editor.initCode "Инициализация">
+<!ENTITY editor.initCode.accesskey "I">
+<!ENTITY editor.initCode.tooltiptext "Выполняется при открытии окна приложения">
+<!ENTITY editor.code.defaultValue "/*CODE*/">
+<!ENTITY editor.initCode.defaultValue "/*Initialization Code*/">
+<!ENTITY editor.Apply "Сохранить">
+<!ENTITY editor.urlfield "URL кнопки:">
+<!ENTITY editor.urlfield.accesskey "U">
+<!ENTITY editor.buttonSettings "Настройки кнопки">
+<!ENTITY editor.buttonSettings.accesskey "s">
+<!ENTITY editor.buttonSettings.tooltiptext "Панель настроек кнопки">
+<!ENTITY editor.buttonSettings.hotKeyGroupbox "&quot;Горячая&quot; клавиша">
+<!ENTITY editor.buttonSettings.accelkey "Сочетание клавиш:">
+<!ENTITY editor.buttonSettings.disableDefaultKeyBehavior "Запретить стандартное действие для указанного сочетания клавиш">
+<!ENTITY editor.buttonSettings.addMoreKeys "Дополнительно…">
+
+<!ENTITY cbeditor.quickfindtextbox "Быстрый поиск: ">
+
+<!ENTITY finddialog.findtextbox "Найти: ">
+<!ENTITY finddialog.replacetextbox "Заменить: ">
+<!ENTITY finddialog.optionscaption "Настройки">
+<!ENTITY finddialog.casesensitive "С учётом регистра">
+<!ENTITY finddialog.prompteachreplace "Переспрашивать каждый раз">
+<!ENTITY finddialog.directioncaption "Направление">
+<!ENTITY finddialog.forward "Вперед">
+<!ENTITY finddialog.backward "Назад">
+
+<!ENTITY repprompt.replace "Заменить">
+<!ENTITY repprompt.cancel "Отмена">
+<!ENTITY repprompt.skip "Пропустить">
+<!ENTITY repprompt.replaceall "Заменить всё">
+<!ENTITY repprompt.msg "Заменить?">

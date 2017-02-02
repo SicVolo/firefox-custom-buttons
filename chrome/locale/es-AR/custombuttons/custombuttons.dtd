@@ -1,0 +1,22 @@
+<!ENTITY custombuttons "Custom Buttons">
+
+<!ENTITY custombuttons.viewMenu_Item "Agregar nuevo botón…">
+<!ENTITY custombuttons.buttonPopup.edit "Editar botón…">
+<!ENTITY custombuttons.buttonPopup.remove "Borrar botón">
+<!ENTITY custombuttons.buttonPopup.clone "Clonar botón">
+<!ENTITY custombuttons.buttonPopup.copyURI "Copiar al portapapeles">
+<!ENTITY custombuttons.buttonPopup.bookmark "Marcar botón">
+<!ENTITY custombuttons.buttonPopup.help "Ayuda del botón">
+<!ENTITY custombuttons.buttonPopup.update "Actualizar botón">
+<!ENTITY custombuttons.buttonPopup.subCall "Custom Button">
+
+<!ENTITY custombuttons_prefsDialog.title "Custom Buttons: preferencias">
+<!ENTITY custombuttons.prefs.show_apply_button "Mostrar botón &quot;Guardar&quot; en el editor">
+<!ENTITY custombuttons.prefs.disable_init "Deshabilitar inicialización de botones (utilizar en caso de problemas con los botones, los cambios afectan sólo a nuevas ventanas)">
+<!ENTITY custombuttons.prefs.enable_custombutton_protocol "Permitir instalar botones desde mensajes de correo.">
+<!ENTITY custombuttons.prefs.editor_save_size_and_position "Guardar tamaño y posición de las ventanas de edición por separado para cada botón personalizado">
+
+<!ENTITY custombuttons.about.supportPageURL "Visitar página de soporte">
+
+<!ENTITY custombuttons.addons4.sortname "Nombre">
+<!ENTITY custombuttons.addons4.nobuttons "Usted no tiene ningún botón personalizado instalado">

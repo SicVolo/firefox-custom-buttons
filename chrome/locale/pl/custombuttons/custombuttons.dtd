@@ -1,0 +1,18 @@
+<!ENTITY custombuttons "Własne przyciski">
+<!ENTITY custombuttons.viewMenu_Item "Dodaj nowy przycisk…">
+<!ENTITY custombuttons.buttonPopup.edit "Edytuj przycisk…">
+<!ENTITY custombuttons.buttonPopup.remove "Usuń przycisk">
+<!ENTITY custombuttons.buttonPopup.clone "Duplikuj przycisk">
+<!ENTITY custombuttons.buttonPopup.copyURI "Kopiuj kod przycisku">
+<!ENTITY custombuttons.buttonPopup.bookmark "Dodaj zakładkę">
+<!ENTITY custombuttons.buttonPopup.help "Pomoc">
+<!ENTITY custombuttons.buttonPopup.update "Aktualizuj przycisk">
+<!ENTITY custombuttons.buttonPopup.subCall "Własny przycisk">
+<!ENTITY custombuttons_prefsDialog.title "Custom Buttons – ustawienia">
+<!ENTITY custombuttons.prefs.show_apply_button "Wyświetlaj przycisk „Zapisz” w edytorze kodu">
+<!ENTITY custombuttons.prefs.disable_init "Wyłącz inicjację przycisków (użyj w przypadku problemów z przyciskami; zmiany będą działały tylko w nowych oknach)">
+<!ENTITY custombuttons.prefs.enable_custombutton_protocol "Włącz przyciski instalacyjne w wiadomościach pocztowych">
+<!ENTITY custombuttons.prefs.editor_save_size_and_position "Zapisuj rozmiar i położenie okien edytora oddzielnie dla każdego przycisku">
+<!ENTITY custombuttons.about.supportPageURL "Przejdź na stronę pomocy">
+<!ENTITY custombuttons.addons4.sortname "Nazwa">
+<!ENTITY custombuttons.addons4.nobuttons "Nie masz zainstalowanych żadnych własnych przycisków">

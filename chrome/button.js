@@ -1,0 +1,1 @@
+(new Function (argNames, code)). apply (oButton, args);

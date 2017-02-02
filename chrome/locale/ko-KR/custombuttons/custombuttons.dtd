@@ -1,0 +1,22 @@
+<!ENTITY custombuttons "Custom Buttons">
+
+<!ENTITY custombuttons.viewMenu_Item "새 버튼 추가">
+<!ENTITY custombuttons.buttonPopup.edit "버튼 편집">
+<!ENTITY custombuttons.buttonPopup.remove "버튼 삭제">
+<!ENTITY custombuttons.buttonPopup.clone "버튼 복제">
+<!ENTITY custombuttons.buttonPopup.copyURI "클립보드로 복사">
+<!ENTITY custombuttons.buttonPopup.bookmark "북마크 버튼">
+<!ENTITY custombuttons.buttonPopup.help "버튼 도움말">
+<!ENTITY custombuttons.buttonPopup.update "버튼 업데이트">
+<!ENTITY custombuttons.buttonPopup.subCall "맞춤 버튼">
+
+<!ENTITY custombuttons_prefsDialog.title "Custom Buttons : 설정">
+<!ENTITY custombuttons.prefs.show_apply_button "코드 편집기에 &quot;저장&quot; 버튼을 보이기">
+<!ENTITY custombuttons.prefs.disable_init "버튼 초기화를 사용 안 함 (변경사항은 오직 새 창에만 적용됨)">
+<!ENTITY custombuttons.prefs.enable_custombutton_protocol "메일 메시지로부터 버튼을 설치함">
+<!ENTITY custombuttons.prefs.editor_save_size_and_position "각각의 맞춤 버튼에 대한 편집기 창의 크기와 위치를 별도로 저장함">
+
+<!ENTITY custombuttons.about.supportPageURL "지원 페이지 방문">
+
+<!ENTITY custombuttons.addons4.sortname "Name">
+<!ENTITY custombuttons.addons4.nobuttons "You don't have any custom button installed">

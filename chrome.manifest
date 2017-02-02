@@ -1,0 +1,149 @@
+
+
+content custombuttons jar:chrome/custombuttons.jar!/content/custombuttons/
+content custombuttons-context chrome/
+
+## Firefox
+overlay chrome://browser/content/browser.xul chrome://custombuttons/content/overlay.xul
+overlay chrome://browser/content/browser.xul resource://custombuttons/buttonsoverlay.xul
+
+## Seamonkey navigator
+overlay chrome://navigator/content/navigator.xul chrome://custombuttons/content/SeamonkeyOverlay.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a} appversion<2.1a1pre
+overlay chrome://navigator/content/navigator.xul chrome://custombuttons/content/Seamonkey21Overlay.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a} appversion>=2.1a1pre
+overlay chrome://navigator/content/navigator.xul resource://custombuttons/buttonsoverlay.xul
+overlay chrome://navigator/content/navigator.xul chrome://custombuttons/content/overlay3b2.xul appversion>=3.0b1
+overlay chrome://navigator/content/navigator.xul chrome://custombuttons/content/tcbbutton.xul
+
+## Seamonkey mail
+## main window
+overlay chrome://messenger/content/messenger.xul chrome://custombuttons/content/SeamonkeyMailOverlay.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
+overlay chrome://messenger/content/messenger.xul chrome://custombuttons/content/tcbbutton.xul
+overlay chrome://messenger/content/messenger.xul resource://custombuttons/buttonsoverlay.xul
+## message window
+overlay chrome://messenger/content/messageWindow.xul chrome://custombuttons/content/SeamonkeyMailOverlay.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
+overlay chrome://messenger/content/messageWindow.xul chrome://custombuttons/content/tcbbutton.xul
+overlay chrome://messenger/content/messageWindow.xul resource://custombuttons/mwbuttonsoverlay.xul
+## message compose
+overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://custombuttons/content/SeamonkeyMailOverlay.xul application={92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}
+overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://custombuttons/content/tcbbutton.xul
+overlay chrome://messenger/content/messengercompose/messengercompose.xul resource://custombuttons/mcbuttonsoverlay.xul
+
+## Browser
+overlay chrome://browser/content/browser.xul chrome://custombuttons/content/tcbbutton.xul
+overlay chrome://global/content/customizeToolbar.xul chrome://custombuttons/content/tcbbutton.xul
+
+## Firefox 3
+overlay chrome://browser/content/browser.xul chrome://custombuttons/content/overlay3b2.xul application={ec8030f7-c20a-464f-9b0e-13a3a9e97384} appversion>=3.0b1
+overlay chrome://global/content/customizeToolbar.xul chrome://custombuttons/content/customizeToolbars.xul application={ec8030f7-c20a-464f-9b0e-13a3a9e97384} appversion>=3.0b1
+
+## Thunderbird
+## main window
+overlay chrome://messenger/content/messenger.xul chrome://custombuttons/content/ThunderbirdOverlay.xul application={3550f703-e582-4d05-9a08-453d09bdfdc6}
+overlay chrome://messenger/content/messenger.xul chrome://custombuttons/content/tcbbutton.xul
+overlay chrome://messenger/content/messenger.xul resource://custombuttons/buttonsoverlay.xul
+## message window
+overlay chrome://messenger/content/messageWindow.xul chrome://custombuttons/content/ThunderbirdOverlay.xul application={3550f703-e582-4d05-9a08-453d09bdfdc6}
+overlay chrome://messenger/content/messageWindow.xul chrome://custombuttons/content/tcbbutton.xul
+overlay chrome://messenger/content/messageWindow.xul resource://custombuttons/mwbuttonsoverlay.xul
+## message compose
+overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://custombuttons/content/ThunderbirdOverlay.xul application={3550f703-e582-4d05-9a08-453d09bdfdc6}
+overlay chrome://messenger/content/messengercompose/messengercompose.xul chrome://custombuttons/content/tcbbutton.xul
+overlay chrome://messenger/content/messengercompose/messengercompose.xul resource://custombuttons/mcbuttonsoverlay.xul
+
+## Sunbird
+overlay chrome://calendar/content/calendar.xul chrome://custombuttons/content/SunbirdOverlay.xul
+overlay chrome://calendar/content/calendar.xul chrome://custombuttons/content/tcbbutton.xul
+overlay chrome://calendar/content/calendar.xul resource://custombuttons/buttonsoverlay.xul
+overlay chrome://calendar/content/customizeToolbar.xul chrome://custombuttons/content/tcbbutton.xul
+
+## Calendar
+overlay chrome://sunbird/content/calendar.xul chrome://custombuttons/content/CalendarOverlay.xul
+overlay chrome://sunbird/content/calendar.xul chrome://custombuttons/content/tcbbutton.xul
+overlay chrome://sunbird/content/calendar.xul resource://custombuttons/buttonsoverlay.xul
+overlay chrome://sunbird/content/customizeToolbar.xul chrome://custombuttons/content/tcbbutton.xul
+
+## Editor (KompoZer)
+overlay chrome://editor/content/editor.xul chrome://custombuttons/content/EditorOverlay.xul application={20aa4150-b5f4-11de-8a39-0800200c9a66}
+overlay chrome://editor/content/editor.xul chrome://custombuttons/content/tcbbutton.xul application={20aa4150-b5f4-11de-8a39-0800200c9a66}
+overlay chrome://editor/content/editor.xul resource://custombuttons/buttonsoverlay.xul application={20aa4150-b5f4-11de-8a39-0800200c9a66}
+
+## JavaScript Console
+overlay chrome://global/content/console.xul chrome://custombuttons/content/consoleOverlay.xul
+overlay chrome://console2/content/console2.xul chrome://custombuttons/content/consoleOverlay.xul
+overlay chrome://browser/content/devtools/webconsole.xul chrome://custombuttons/content/consoleOverlay.xul
+overlay chrome://devtools/content/webconsole/webconsole.xul chrome://custombuttons/content/consoleOverlay.xul
+
+## Add-Ons Manager
+overlay about:addons chrome://custombuttons/content/addons-overlay.xul
+overlay chrome://mozapps/content/extensions/extensions.xul chrome://custombuttons/content/addons-overlay.xul
+resource custombuttons-modules modules/
+
+skin custombuttons classic/1.0 jar:chrome/custombuttons.jar!/skin/classic/
+
+style chrome://browser/content/browser.xul chrome://custombuttons/skin/custombuttons.css
+style chrome://browser/content/browser.xul chrome://custombuttons/content/overlay.css appversion>1.6
+style chrome://browser/content/browser.xul chrome://custombuttons/content/overlay1.5.css application={ec8030f7-c20a-464f-9b0e-13a3a9e97384} appversion<=1.6
+
+style chrome://navigator/content/navigator.xul chrome://custombuttons/skin/custombuttons.css
+style chrome://navigator/content/navigator.xul chrome://custombuttons/content/overlay.css
+
+style chrome://global/content/customizeToolbar.xul chrome://custombuttons/skin/custombuttons.css
+##style chrome://global/content/customizeToolbar.xul chrome://custombuttons/content/overlay.css appversion>1.6
+style chrome://global/content/customizeToolbar.xul chrome://custombuttons/content/customizeToolbar.css
+style chrome://global/content/customizeToolbar.xul chrome://custombuttons/content/overlay1.5.css application={ec8030f7-c20a-464f-9b0e-13a3a9e97384} appversion<=1.6
+
+style chrome://messenger/content/messenger.xul chrome://custombuttons/skin/custombuttons.css
+style chrome://messenger/content/messenger.xul chrome://custombuttons/content/overlay.css
+style chrome://messenger/content/messengercompose/messengercompose.xul chrome://custombuttons/skin/custombuttons.css
+style chrome://messenger/content/messengercompose/messengercompose.xul chrome://custombuttons/content/overlay.css
+style chrome://messenger/content/messageWindow.xul chrome://custombuttons/skin/custombuttons.css
+style chrome://messenger/content/messageWindow.xul chrome://custombuttons/content/overlay.css
+
+style chrome://calendar/content/calendar.xul chrome://custombuttons/skin/custombuttons.css
+style chrome://calendar/content/calendar.xul chrome://custombuttons/content/overlay.css
+
+style chrome://sunbird/content/calendar.xul chrome://custombuttons/skin/custombuttons.css
+style chrome://sunbird/content/calendar.xul chrome://custombuttons/content/overlay.css
+
+style chrome://editor/content/editor.xul chrome://custombuttons/skin/custombuttons.css
+style chrome://editor/content/editor.xul chrome://custombuttons/content/overlay.css
+
+locale custombuttons en-US jar:chrome/custombuttons.jar!/locale/en-US/custombuttons/
+locale custombuttons ru-RU jar:chrome/custombuttons.jar!/locale/ru-RU/custombuttons/
+locale custombuttons pl-PL jar:chrome/custombuttons.jar!/locale/pl-PL/custombuttons/
+locale custombuttons pl jar:chrome/custombuttons.jar!/locale/pl/custombuttons/
+locale custombuttons pt-BR jar:chrome/custombuttons.jar!/locale/pt-BR/custombuttons/
+locale custombuttons sk-SK jar:chrome/custombuttons.jar!/locale/sk-SK/custombuttons/
+locale custombuttons zh-CN jar:chrome/custombuttons.jar!/locale/zh-CN/custombuttons/
+locale custombuttons nl-NL jar:chrome/custombuttons.jar!/locale/nl-NL/custombuttons/
+locale custombuttons nl jar:chrome/custombuttons.jar!/locale/nl/custombuttons/
+locale custombuttons de-DE jar:chrome/custombuttons.jar!/locale/de-DE/custombuttons/
+locale custombuttons ko-KR jar:chrome/custombuttons.jar!/locale/ko-KR/custombuttons/
+locale custombuttons it-IT jar:chrome/custombuttons.jar!/locale/it-IT/custombuttons/
+locale custombuttons sr jar:chrome/custombuttons.jar!/locale/sr/custombuttons/
+locale custombuttons es-AR jar:chrome/custombuttons.jar!/locale/es-AR/custombuttons/
+
+## XPCOM registration
+interfaces components/CBKeyMapComponent.xpt
+component 86216795-2b22-470a-9388-785cb4b4101b components/CBKeyMapComponent.js
+contract @xsms.nm.ru/custombuttons/cbkeymap;1 86216795-2b22-470a-9388-785cb4b4101b
+
+interfaces components/CustomButtonsService.xpt
+component 64d03940-83bc-4ac6-afc5-3cbf6a7147c5 components/CustomButtonsService.js
+contract @xsms.nm.ru/custombuttons/cbservice;1 64d03940-83bc-4ac6-afc5-3cbf6a7147c5
+category profile-after-change cbICustomButtonsService @xsms.nm.ru/custombuttons/cbservice;1
+
+component cafd9345-65a1-46b2-944d-ff4a9725a609 components/CBCommandLine.js
+contract @mozilla.org/commandlinehandler/general-startup;1?type=custombuttons cafd9345-65a1-46b2-944d-ff4a9725a609
+category command-line-handler m-custombuttons @mozilla.org/commandlinehandler/general-startup;1?type=custombuttons
+
+component cb267f0c-88ed-430d-bd9c-f4e132cd71d5 components/CBContentPolicy.js
+contract @xsms.nm.ru/custombuttons/cbcontentpolicy;1 cb267f0c-88ed-430d-bd9c-f4e132cd71d5
+category content-policy @xsms.nm.ru/custombuttons/cbcontentpolicy;1 @xsms.nm.ru/custombuttons/cbcontentpolicy;1
+
+component 78D452B8-2CE8-4a7b-8A59-DA3C0960DAE7 components/CustomButtonProtocol.js
+contract @mozilla.org/network/protocol;1?name=custombutton 78D452B8-2CE8-4a7b-8A59-DA3C0960DAE7
+
+component 1c796f9e-9a22-4604-84e4-fa7c4b8d80a4 components/CustomButtonProtocol.js
+contract @mozilla.org/network/protocol;1?name=custombuttons 1c796f9e-9a22-4604-84e4-fa7c4b8d80a4
+category profile-after-change @mozilla.org/network/protocol;1?name=custombuttons @mozilla.org/network/protocol;1?name=custombuttons

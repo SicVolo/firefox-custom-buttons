@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://custombuttons/skin/addons-overlay.css" type="text/css"?>
+
+<!DOCTYPE overlay [
+<!ENTITY % custombuttonsDTD SYSTEM "chrome://custombuttons/locale/custombuttons.dtd">
+%custombuttonsDTD;
+]>
+
+<overlay id="custombuttons-addons-overlay"
+	 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script type="application/x-javascript" src="chrome://custombuttons/content/addons-overlay.js" />
+
+  <commandset id="viewCommandSet">
+    <command id="cmd_custombuttons_edit"/>
+    <command id="cmd_custombuttons_add"/>
+    <command id="cmd_custombuttons_sortname" oncommand="cbAddonManager.changeSort()"/>
+  </commandset>
+
+  <menupopup id="addonitem-popup">
+    <menuitem label="&custombuttons.buttonPopup.edit;"
+	      insertbefore="menuitem_showDetails"
+	      command="cmd_custombuttons_edit"/>
+  </menupopup>
+
+  <richlistbox id="categories">
+    <richlistitem id="category-custombuttons" class="category"
+		  value="addons://list/custombuttons"
+		  name="&custombuttons;"/>
+  </richlistbox>
+
+  <vbox id="list-view">
+    <hbox id="custombuttons-sort-bar"
+	  class="view-header"
+	  pack="end"
+	  insertafter="addon-list-empty">
+      <button id="custombutons-add-new"
+	      label="&custombuttons.viewMenu_Item;"
+	      class="addon-control"
+	      command="cmd_custombuttons_add"/>
+      <spacer flex="1"/>
+      <button id="custombuttons-sorting-name"
+	      label="&custombuttons.addons4.sortname;"
+	      class="sorter"
+	      sortBy="name"
+	      persist="checkState,checked"
+	      command="cmd_custombuttons_sortname"/>
+    </hbox>
+    <vbox id="custombuttons-list-empty"
+	  insertafter="addon-list-empty"
+	  class="alert-container"
+	  flex="1">
+      <spacer class="alert-spacer-before"/>
+      <vbox class="alert">
+	<label>&custombuttons.addons4.nobuttons;</label>
+	<button label="&custombuttons.viewMenu_Item;"
+		class="addon-control"
+		command="cmd_custombuttons_add"/>
+      </vbox>
+      <spacer class="alert-spacer-after"/>
+    </vbox>
+  </vbox>
+
+</overlay>

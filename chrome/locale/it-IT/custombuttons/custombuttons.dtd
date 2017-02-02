@@ -1,0 +1,20 @@
+<!ENTITY custombuttons "Custom Buttons">
+
+<!ENTITY custombuttons.viewMenu_Item "Aggiungi nuovo pulsante…">
+<!ENTITY custombuttons.buttonPopup.edit "Modifica pulsante…">
+<!ENTITY custombuttons.buttonPopup.remove "Elimina pulsante">
+<!ENTITY custombuttons.buttonPopup.clone "Clona pulsante">
+<!ENTITY custombuttons.buttonPopup.copyURI "Copia negli appunti">
+<!ENTITY custombuttons.buttonPopup.bookmark "Aggiungi pulsante ai segnalibri…">
+<!ENTITY custombuttons.buttonPopup.help "Contenuti guida del pulsante">
+<!ENTITY custombuttons.buttonPopup.update "Aggiorna pulsante">
+<!ENTITY custombuttons.buttonPopup.subCall "Pulsante personalizzato">
+<!ENTITY custombuttons_prefsDialog.title "Impostazioni di Custom Buttons">
+<!ENTITY custombuttons.prefs.show_apply_button "Visualizza il pulsante &quot;Applica&quot; nella finestra di modifica del pulsante">
+<!ENTITY custombuttons.prefs.disable_init "Disattiva l'inizializzazione dei pulsanti per le nuove finestre (selezionare in caso di problemi)">
+<!ENTITY custombuttons.prefs.enable_custombutton_protocol "Permetti l'installazione dei pulsanti dai messaggi di posta elettronica">
+<!ENTITY custombuttons.prefs.editor_save_size_and_position "Memorizza dimensioni e posizione per ogni finestra di modifica del pulsante">
+<!ENTITY custombuttons.about.supportPageURL "Visita il sito web">
+
+<!ENTITY custombuttons.addons4.sortname "Name">
+<!ENTITY custombuttons.addons4.nobuttons "You don't have any custom button installed">

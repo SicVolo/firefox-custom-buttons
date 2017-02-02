@@ -1,0 +1,49 @@
+<!ENTITY editor.dialog.help "도움말">
+<!ENTITY editor.dialog.help.accesskey "H">
+<!ENTITY editor.dialog.title "버튼 편집">
+<!ENTITY editor.dialog.editexternal "Edit external…">
+<!ENTITY editor.name "이름 :">
+<!ENTITY editor.name.accesskey "N">
+<!ENTITY editor.name.tooltiptext "버튼의 이름과 툴팁 텍스트를 정의함">
+<!ENTITY editor.image "아이콘 :">
+<!ENTITY editor.image.accesskey "m">
+<!ENTITY editor.select "찾아보기…">
+<!ENTITY editor.select.accesskey "o">
+<!ENTITY editor.base64 "&#8658; base64">
+<!ENTITY editor.base64.accesskey "b">
+<!ENTITY editor.base64.tooltiptext "아이콘을 base64 형식으로 변환함 (data:image/png;base64,...)">
+<!ENTITY editor.code "코드">
+<!ENTITY editor.code.accesskey "C">
+<!ENTITY editor.code.tooltiptext "툴바 버튼을 누르면 실행되는 코드">
+<!ENTITY editor.initCode "초기화 코드">
+<!ENTITY editor.initCode.accesskey "I">
+<!ENTITY editor.initCode.tooltiptext "브라우저를 시작할 때 실행되는 코드">
+<!ENTITY editor.code.defaultValue "/*CODE*/">
+<!ENTITY editor.initCode.defaultValue "/*Initialization Code*/">
+<!ENTITY editor.Apply "저장">
+<!ENTITY editor.urlfield "버튼 URL :">
+<!ENTITY editor.urlfield.accesskey "U">
+<!ENTITY editor.buttonSettings "버튼 설정">
+<!ENTITY editor.buttonSettings.accesskey "s">
+<!ENTITY editor.buttonSettings.tooltiptext "버튼 설정 패널">
+<!ENTITY editor.buttonSettings.hotKeyGroupbox "단축키">
+<!ENTITY editor.buttonSettings.accelkey "단축키 :">
+<!ENTITY editor.buttonSettings.disableDefaultKeyBehavior "지정한 단축키의 기본 동작을 사용 안 함">
+<!ENTITY editor.buttonSettings.addMoreKeys "더 보기...">
+
+<!ENTITY cbeditor.quickfindtextbox "빠른 찾기 : ">
+
+<!ENTITY finddialog.findtextbox "찾기 : ">
+<!ENTITY finddialog.replacetextbox "교체 : ">
+<!ENTITY finddialog.optionscaption "옵션">
+<!ENTITY finddialog.casesensitive "대/소문자 구분">
+<!ENTITY finddialog.prompteachreplace "각각의 교체 텍스트에 프롬프트를 위치시킴">
+<!ENTITY finddialog.directioncaption "방향">
+<!ENTITY finddialog.forward "아래로">
+<!ENTITY finddialog.backward "위로">
+
+<!ENTITY repprompt.replace "교체">
+<!ENTITY repprompt.cancel "취소">
+<!ENTITY repprompt.skip "건너뜀">
+<!ENTITY repprompt.replaceall "모두 교체">
+<!ENTITY repprompt.msg "교체하시겠습니까?">

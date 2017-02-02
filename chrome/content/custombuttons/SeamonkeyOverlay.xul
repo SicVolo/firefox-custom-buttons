@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<?xul-overlay href="chrome://custombuttons/content/commoverlay.xul"?>
+<!DOCTYPE overlay [
+<!ENTITY % browserDTD SYSTEM "chrome://navigator/locale/browser.dtd" >
+%browserDTD;
+<!ENTITY % custombuttonsDTD SYSTEM "chrome://custombuttons/locale/custombuttons.dtd" >
+%custombuttonsDTD;
+<!ENTITY % utilityDTD SYSTEM "chrome://communicator/locale/utilityOverlay.dtd">
+%utilityDTD;
+]>
+
+<overlay id="custombuttonsOverlay"
+		 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<popupset id="mainPopupSet">
+		<menupopup id="custombuttons-contextpopup">
+			<menuitem id="custombuttons-contextpopup-addnewbutton"
+				  class="menuitem-iconic"
+					  label="&custombuttons.viewMenu_Item;"
+					  oncommand="custombuttons.addButton()"
+					  observes="custombuttons-contextbroadcaster-primary"/>
+			<menuitem id="custombuttons-contextpopup-customize"
+				  class="menuitem-iconic"
+					  accesskey="&customizeToolbarContext.accesskey;"
+					  command="cmd_CustomizeToolbars"
+					  label="&customizeToolbarContext.label;"
+					  observes="custombuttons-contextbroadcaster-primary"/>
+			<menu id="custombuttons-contextpopup-subCall"
+				  label="&custombuttons.buttonPopup.subCall;"
+				  observes="custombuttons-contextbroadcaster-secondary">
+				<menupopup id="custombuttons-contextpopup-sub">
+					<menuitem id="custombuttons-contextpopup-addnewbutton-sub"
+						  class="menuitem-iconic"
+							  label="&custombuttons.viewMenu_Item;"
+							  oncommand="custombuttons.addButton()"/>
+					<menuitem id="custombuttons-contextpopup-customize-sub"
+						  class="menuitem-iconic"
+							  accesskey="&customizeToolbarContext.accesskey;"
+							  command="cmd_CustomizeToolbars"
+							  label="&customizeToolbarContext.label;"/>
+				</menupopup>
+			</menu>
+		</menupopup>
+		
+	</popupset>
+
+	<menupopup id="menu_View_Popup">
+		<menuseparator/>
+		<menuitem label="&custombuttons.viewMenu_Item;"
+			  class="menuitem-iconic"
+				  oncommand="custombuttons.addButton()"/>
+	</menupopup>
+
+	<window id="main-window">
+		<stringbundleset id="cbStringBundleSet"/>
+		
+		<broadcasterset id="custombuttons-broadcasterset"/>
+		<broadcasterset id="custombuttons-buttons-broadcasterset"/>
+	</window>
+
+</overlay>

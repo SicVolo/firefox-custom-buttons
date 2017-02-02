@@ -1,0 +1,20 @@
+<!ENTITY custombuttons "自定义按钮">
+
+<!ENTITY custombuttons.viewMenu_Item "添加新按钮…">
+<!ENTITY custombuttons.buttonPopup.edit "编辑该按钮…">
+<!ENTITY custombuttons.buttonPopup.remove "删除该按钮">
+<!ENTITY custombuttons.buttonPopup.clone "复制该按钮">
+<!ENTITY custombuttons.buttonPopup.copyURI "复制该按钮到剪贴板">
+<!ENTITY custombuttons.buttonPopup.bookmark "按钮添加到书签">
+<!ENTITY custombuttons.buttonPopup.help "按钮帮助">
+<!ENTITY custombuttons.buttonPopup.update "更新按钮">
+<!ENTITY custombuttons.buttonPopup.subCall "自定义按钮">
+<!ENTITY custombuttons_prefsDialog.title "Custombuttons: 设置">
+<!ENTITY custombuttons.prefs.show_apply_button "在代码编辑器显示&quot;保存&quot;按钮">
+<!ENTITY custombuttons.prefs.disable_init "禁用按钮初始化 (在新窗口生效)">
+<!ENTITY custombuttons.prefs.enable_custombutton_protocol "启用从邮件中安装按钮">
+<!ENTITY custombuttons.prefs.editor_save_size_and_position "分别为每个按钮保存编辑窗口位置和大小">
+<!ENTITY custombuttons.about.supportPageURL "访问支持页">
+
+<!ENTITY custombuttons.addons4.sortname "名称">
+<!ENTITY custombuttons.addons4.nobuttons "您未安装任何自定义按钮">

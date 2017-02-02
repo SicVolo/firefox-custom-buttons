@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<bindings id="custombuttons-toolbarbuttons-bindings"
+          xmlns="http://www.mozilla.org/xbl"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <binding id="toolbarbutton"
+	   extends="chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton">
+    <implementation>
+      <constructor>
+	<![CDATA[
+		 if (Components. lookupMethod)
+		 	Components. classes ["@mozilla.org/moz/jssubscript-loader;1"].
+		 		getService (Components. interfaces. mozIJSSubScriptLoader).
+		 			loadSubScript ("chrome://custombuttons/content/cbbiNativeMethod.js", this);
+		 if (!this. _handlers)
+		 	Components. classes ["@mozilla.org/moz/jssubscript-loader;1"].
+		 		getService (Components. interfaces. mozIJSSubScriptLoader).
+		 			loadSubScript ("chrome://custombuttons/content/cbbuttonimpl.js", this);
+		 if ("custombutton" in window)
+		 	custombutton. buttonConstructor (this);
+	]]>
+      </constructor>
+      <destructor>
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. buttonDestructor (this);
+	]]>
+      </destructor>
+    </implementation>
+    <handlers>
+      <handler event="command">
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. buttonCommand (event, this);
+	]]>
+      </handler>
+      <handler event="mousedown" phase="capturing">
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. onMouseDown (event, this);
+	]]>
+      </handler>
+    </handlers>
+  </binding>
+
+  <binding id="menu"
+	   extends="chrome://global/content/bindings/toolbarbutton.xml#menu">
+    <implementation>
+      <constructor>
+	<![CDATA[
+		 if (Components. lookupMethod)
+		 	Components. classes ["@mozilla.org/moz/jssubscript-loader;1"].
+		 		getService (Components. interfaces. mozIJSSubScriptLoader).
+		 			loadSubScript ("chrome://custombuttons/content/cbbiNativeMethod.js", this);
+		 if (!this. _handlers)
+		 	Components. classes ["@mozilla.org/moz/jssubscript-loader;1"].
+		 		getService (Components. interfaces. mozIJSSubScriptLoader).
+		 			loadSubScript ("chrome://custombuttons/content/cbbuttonimpl.js", this);
+		 if ("custombutton" in window)
+		 	custombutton. buttonConstructor (this);
+	]]>
+      </constructor>
+      <destructor>
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. buttonDestructor (this);
+	]]>
+      </destructor>
+    </implementation>
+    <handlers>
+      <handler event="command">
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. buttonCommand (event, this);
+	]]>
+      </handler>
+      <handler event="mousedown" phase="capturing">
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. onMouseDown (event, this);
+	]]>
+      </handler>
+    </handlers>
+  </binding>
+
+  <binding id="menu-orient"
+	   extends="chrome://global/content/bindings/toolbarbutton.xml#menu-orient">
+    <implementation>
+      <constructor>
+	<![CDATA[
+		 if (Components. lookupMethod)
+		 	Components. classes ["@mozilla.org/moz/jssubscript-loader;1"].
+		 		getService (Components. interfaces. mozIJSSubScriptLoader).
+		 			loadSubScript ("chrome://custombuttons/content/cbbiNativeMethod.js", this);
+		 if (!this. _handlers)
+			 Components. classes ["@mozilla.org/moz/jssubscript-loader;1"].
+			 	getService (Components. interfaces. mozIJSSubScriptLoader).
+			 		loadSubScript ("chrome://custombuttons/content/cbbuttonimpl.js", this);
+		 if ("custombutton" in window)
+		 	custombutton. buttonConstructor (this);
+	]]>
+      </constructor>
+      <destructor>
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. buttonDestructor (this);
+	]]>
+      </destructor>
+    </implementation>
+    <handlers>
+      <handler event="command">
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. buttonCommand (event, this);
+	]]>
+      </handler>
+      <handler event="mousedown" phase="capturing">
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. onMouseDown (event, this);
+	]]>
+      </handler>
+    </handlers>
+  </binding>
+
+  <binding id="menu-button"
+	   extends="chrome://global/content/bindings/toolbarbutton.xml#menu-button">
+    <implementation>
+      <constructor>
+	<![CDATA[
+		 if (Components. lookupMethod)
+		 	Components. classes ["@mozilla.org/moz/jssubscript-loader;1"].
+		 		getService (Components. interfaces. mozIJSSubScriptLoader).
+		 			loadSubScript ("chrome://custombuttons/content/cbbiNativeMethod.js", this);
+		 if (!this. _handlers)
+			 Components. classes ["@mozilla.org/moz/jssubscript-loader;1"].
+			 	getService (Components. interfaces. mozIJSSubScriptLoader).
+			 		loadSubScript ("chrome://custombuttons/content/cbbuttonimpl.js", this);
+		 if ("custombutton" in window)
+		 	custombutton. buttonConstructor (this);
+	]]>
+      </constructor>
+      <destructor>
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. buttonDestructor (this);
+	]]>
+      </destructor>
+    </implementation>
+    <handlers>
+      <handler event="command">
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. buttonCommand (event, this);
+	]]>
+      </handler>
+      <handler event="mousedown" phase="capturing">
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. onMouseDown (event, this);
+	]]>
+      </handler>
+    </handlers>
+  </binding>
+
+  <binding id="menu-vertical"
+	   extends="chrome://global/content/bindings/toolbarbutton.xml#menu-vertical">
+    <implementation>
+      <constructor>
+	<![CDATA[
+		 if (Components. lookupMethod)
+		 	Components. classes ["@mozilla.org/moz/jssubscript-loader;1"].
+		 		getService (Components. interfaces. mozIJSSubScriptLoader).
+		 			loadSubScript ("chrome://custombuttons/content/cbbiNativeMethod.js", this);
+		 if (!this. _handlers)
+			 Components. classes ["@mozilla.org/moz/jssubscript-loader;1"].
+			 	getService (Components. interfaces. mozIJSSubScriptLoader).
+			 		loadSubScript ("chrome://custombuttons/content/cbbuttonimpl.js", this);
+		 if ("custombutton" in window)
+		 	custombutton. buttonConstructor (this);
+	]]>
+      </constructor>
+      <destructor>
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. buttonDestructor (this);
+	]]>
+      </destructor>
+    </implementation>
+    <handlers>
+      <handler event="command">
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. buttonCommand (event, this);
+	]]>
+      </handler>
+      <handler event="mousedown" phase="capturing">
+	<![CDATA[
+		 if ("custombutton" in window)
+		 	custombutton. onMouseDown (event, this);
+	]]>
+      </handler>
+    </handlers>
+  </binding>
+</bindings>

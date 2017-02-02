@@ -1,0 +1,9 @@
+<overlay id="custombuttons-profile-overlay-script"
+		 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<script type="application/x-javascript;version=1.8" src="chrome://custombuttons/content/cbbuttonloader.js"/>
+	<script type="application/x-javascript;version=1.7" src="chrome://custombuttons/content/cbbuttonloader.js"/>
+	<script type="application/x-javascript;version=1.6" src="chrome://custombuttons/content/cbbuttonloader.js"/>
+	<script type="application/x-javascript" src="chrome://custombuttons/content/cbbuttonloader.js"/>
+
+</overlay>

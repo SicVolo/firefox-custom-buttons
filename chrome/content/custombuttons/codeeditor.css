@@ -1,0 +1,90 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/*.custombuttons-editor-codeBox
+{
+    -moz-binding: url("chrome://custombuttons/content/codeeditor.xml#code_editor_binding");
+}
+*/
+cbeditor
+{
+	-moz-binding: url(chrome://custombuttons/content/cbeditor.xml#custombuttons-codeeditor);
+}
+
+cbeditor > *
+{
+	font-family: Tahoma;
+}
+
+.cbeditor-textbox
+{
+	font-family: -moz-fixed;
+	font-size: 12px;
+	padding: 0px;
+	margin: 0px;
+}
+#accelkey
+{
+  -moz-binding: url("chrome://custombuttons/content/cbeditor.xml#accelkeytextboxbinding");
+}
+#accelkey[bExtendedMode="true"] > .textbox-input-box
+{
+	background-color: red;
+	opacity: 0.3;
+}
+
+tabpanels
+{
+	padding: 1px;
+	margin: 1px;
+}
+
+.menulist-iconic
+{
+	-moz-binding: url("chrome://custombuttons/content/menulisticonic.xml#custombuttons-menulist-editable-iconic");
+}
+
+.menulist-iconic[focused=true]
+{
+	-moz-user-focus: ignore;
+}
+
+.menu-iconic-left
+{
+	display: -moz-box;
+	max-width: 20px;
+	max-height: 20px;
+	height: 16px;
+	width: 16px;
+	margin-right: 5px;
+}
+
+.menu-iconic-icon
+{
+	width: auto;
+	height: auto;
+}
+.menu-iconic-icon,
+.custombuttons-menulist-icon
+{
+	max-width: 16px;
+	max-height: 16px;
+}
+
+*[value="custombuttons-stdicon-1"]
+{
+	list-style-image: url("chrome://custombuttons/skin/button.png");
+}
+
+*[value="custombuttons-stdicon-2"]
+{
+	list-style-image: url("chrome://custombuttons/skin/stdicons/rbutton.png");
+}
+
+*[value="custombuttons-stdicon-3"]
+{
+	list-style-image: url("chrome://custombuttons/skin/stdicons/gbutton.png");
+}
+
+*[value="custombuttons-stdicon-4"]
+{
+	list-style-image: url("chrome://custombuttons/skin/stdicons/bbutton.png");
+}

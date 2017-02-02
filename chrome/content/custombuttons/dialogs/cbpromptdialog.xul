@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		id="custombuttonsPromptDialog"
+		buttons="accept,cancel,disclosure,help"
+		onload="cbPromptDialog.init();"
+		ondialogaccept="return cbPromptDialog.onAccept();"
+		ondialogcancel="return cbPromptDialog.onCancel();"
+		ondialogdisclosure="return cbPromptDialog.onDisclosure();"
+		ondialoghelp="return cbPromptDialog.onHelp();"
+		ondialogextra1="cbPromptDialog.onExtra1()"
+		ondialogextra2="cbPromptDialog.onExtra2()"
+		onunload="cbPromptDialog.destroy();">
+
+	<script type="application/x-javascript" src="chrome://custombuttons/content/dialogs/cbpromptdialog.js"/>
+
+	<dialogheader id="dialogheader"/>
+
+</dialog>

@@ -1,0 +1,25 @@
+toolbarbutton[id^="custombuttons-button"][orient],
+toolbarbutton[id^='wrapper-custombuttons-button'][orient]
+{
+  -moz-binding: url("chrome://custombuttons/content/toolbarbutton.xml#menu-orient");
+}
+
+toolbarbutton[id^='custombuttons-button'],
+toolbarbutton[id^='wrapper-custombuttons-button']{
+  -moz-binding: url("chrome://custombuttons/content/toolbarbutton.xml#toolbarbutton");
+}
+
+toolbarbutton[id^='custombuttons-button'][type="menu"],
+toolbarbutton[id^='wrapper-custombuttons-button'][type="menu"]{
+  -moz-binding: url("chrome://custombuttons/content/toolbarbutton.xml#menu");
+}
+
+toolbarbutton[id^='custombuttons-button'][type="menu-button"],
+toolbarbutton[id^='wrapper-custombuttons-button'][type="menu-button"]{
+  -moz-binding: url("chrome://custombuttons/content/toolbarbutton.xml#menu-button");
+}
+
+toolbarbutton[id^="custombuttons-button"][cb-style~="hidelabel"]>label
+{
+	display: none;
+}

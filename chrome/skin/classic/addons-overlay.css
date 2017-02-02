@@ -1,0 +1,35 @@
+#category-custombuttons > .category-icon {
+    list-style-image: url("chrome://custombuttons/skin/cbicon.png");
+}
+
+.addon[type="custombuttons"] .icon {
+    list-style-image: url("chrome://custombuttons/skin/button.png");
+}
+
+.addon.addon-view[type="custombuttons"] .details.button-link {
+  display: none !important;
+}
+
+#addonitem-popup[addontype="custombuttons"] #menuitem_showDetails {
+  display: none !important;
+}
+
+page.custombuttons #addon-list-empty {
+    display: none;
+}
+
+#custombuttons-sort-bar {
+    display: none;
+}
+
+#list-view[type="custombuttons"] #addon-list-empty[hidden] ~ #custombuttons-sort-bar {
+    display: -moz-box;
+}
+
+#custombuttons-list-empty {
+    display: none;
+}
+
+#list-view[type="custombuttons"] #addon-list-empty:not([hidden]) ~ #custombuttons-list-empty {
+    display: -moz-box;
+}

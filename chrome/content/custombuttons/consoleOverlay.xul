@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script type="application/javascript">
+	<![CDATA[
+		var custombuttonsConsole = {
+			init: function() {
+				window.removeEventListener("load", this, false);
+				window.addEventListener("unload", this, false);
+				window.addEventListener("click", this, true);
+			},
+			destroy: function() {
+				window.removeEventListener("unload", this, false);
+				window.removeEventListener("click", this, true);
+			},
+			handleClick: function(e) {
+				if(e.button != 0)
+					return;
+				var trg = e.originalTarget;
+				if (
+					!/\b(text-link|location)\b/. test (trg. className)
+					&& !/\b(text-link|location)\b/. test (trg. parentNode. className) // Firefox 29+
+				)
+				    return;
+				var link = (/\blocation\b/. test (trg. className))? trg: trg. parentNode;
+				var href = link.getAttribute("href")
+				|| link.getAttribute("title")
+				|| "";
+				if(href.substr(0, 48) != "chrome://custombuttons-context/content/button.js")
+					return;
+				e.preventDefault();
+				e.stopPropagation();
+				var line = link.getAttribute("line")
+				|| link. sourceLine
+				|| /:(\d+)$/.test(link.getAttribute("value")) && RegExp.$1;
+				var windowId = href.match(/windowId=(\w+)/)[1];
+				var phase = href.match(/@(\w+)/)[1];
+				var buttonId = href. match(/id=([\w-]+)/)[1];
+				var uri = "custombutton://buttons/" + windowId + "/" + phase + "/" + buttonId + "#" + line;
+				Components.classes["@xsms.nm.ru/custombuttons/cbservice;1"]
+					.getService(Components.interfaces.cbICustomButtonsService)
+					.editButton(null, uri, null);
+			},
+			handleEvent: function(e) {
+				switch(e.type) {
+					case "load":   this.init(); break;
+					case "unload": this.destroy(); break;
+					case "click":  this.handleClick(e);
+				}
+			}
+		};
+		window.addEventListener("load", custombuttonsConsole, false);
+	]]>
+	</script>
+</overlay>

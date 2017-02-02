@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay [
+<!ENTITY % custombuttonsDTD SYSTEM "chrome://custombuttons/locale/custombuttons.dtd" >
+%custombuttonsDTD;
+]>
+<overlay id="custombuttonsOverlay"
+		 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	
+		 <!-- added -->
+	<script type="application/x-javascript" src="chrome://custombuttons/content/overlay.js"/>
+	<script type="application/x-javascript" src="chrome://custombuttons/content/cb2api.js"/>
+	<!-- end added -->
+
+	<broadcasterset id="custombuttons-broadcasterset">
+		<broadcaster id="custombuttons-contextbroadcaster-root"/>
+		<broadcaster id="custombuttons-contextbroadcaster-primary"/>
+		<broadcaster id="custombuttons-contextbroadcaster-secondary"/>
+		<broadcaster id="custombuttons-contextbroadcaster-update"/>
+		<broadcaster id="custombuttons-contextbroadcaster-help"/>
+		<broadcaster id="custombuttons-contextbroadcaster-customizeseparator"/>
+	</broadcasterset>
+
+	<menupopup id="custombuttons-contextpopup-sub">
+		<menuitem id="custombuttons-contextpopup-edit-sub"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.edit;"
+				  oncommand="custombuttons.editButton();"/>
+		<menuitem id="custombuttons-contextpopup-remove-sub"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.remove;"
+				  oncommand="custombuttons.doButtonOperation('remove');"/>
+		<menuseparator id="custombuttons-contextpopup-separator1-sub"/>
+		<menuitem id="custombuttons-contextpopup-clone-sub"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.clone;"
+				  oncommand="if(!event.ctrlKey)custombuttons.doButtonOperation('clone');"
+			  	  onclick="custombuttons.handleMenuClick(event);"/>
+		<menuitem id="custombuttons-contextpopup-copyURI-sub"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.copyURI;"
+				  oncommand="custombuttons.copyURI();"/>
+		<menuseparator id="custombuttons-contextpopup-separator2-sub"/>
+		<menuitem id="custombuttons-contextpopup-updateButton-sub"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.update;"
+				  observes="custombuttons-contextbroadcaster-update"
+				  oncommand="custombuttons.updateButton();"/>
+		<menuitem id="custombuttons-contextpopup-bookmarkButton-sub"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.bookmark;"
+				  oncommand="custombuttons.bookmarkButton();"/>
+		<menuitem id="custombuttons-contextpopup-buttonHelp-sub"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.help;"
+				  observes="custombuttons-contextbroadcaster-help"
+				  oncommand="custombuttons.uChelpButton();"/>
+		<menuseparator id="custombuttons-contextpopup-separator3-sub"
+					   observes="custombuttons-contextpopup-customizeseparator"/>
+	</menupopup>
+
+	<menupopup id="custombuttons-contextpopup">
+		<menuitem id="custombuttons-contextpopup-edit"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.edit;"
+				  observes="custombuttons-contextbroadcaster-primary"
+				  oncommand="custombuttons.editButton();"/>
+		<menuitem id="custombuttons-contextpopup-remove"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.remove;"
+				  observes="custombuttons-contextbroadcaster-primary"
+				  oncommand="custombuttons.doButtonOperation('remove');"/>
+		<menuseparator id="custombuttons-contextpopup-separator1"
+					   observes="custombuttons-contextbroadcaster-primary"/>
+		<menuitem id="custombuttons-contextpopup-clone"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.clone;"
+				  observes="custombuttons-contextbroadcaster-primary"
+				  oncommand="if(!event.ctrlKey)custombuttons.doButtonOperation('clone');"
+			  	  onclick="custombuttons.handleMenuClick(event);"/>
+		<menuitem id="custombuttons-contextpopup-copyURI"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.copyURI;"
+				  observes="custombuttons-contextbroadcaster-primary"
+				  oncommand="custombuttons.copyURI();"/>
+		<menuseparator id="custombuttons-contextpopup-separator2"
+					   observes="custombuttons-contextbroadcaster-primary"/>
+		<menuitem id="custombuttons-contextpopup-updateButton"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.update;"
+				  oncommand="custombuttons.updateButton();">
+			<observes element="custombuttons-contextbroadcaster-primary"
+					  attribute="hidden"/>
+			<observes element="custombuttons-contextbroadcaster-update"
+					  attribute="hidden"/>
+		</menuitem>
+		<menuitem id="custombuttons-contextpopup-bookmarkButton"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.bookmark;"
+				  observes="custombuttons-contextbroadcaster-primary"
+				  oncommand="custombuttons.bookmarkButton();"/>
+		<menuitem id="custombuttons-contextpopup-buttonHelp"
+			  class="menuitem-iconic"
+				  label="&custombuttons.buttonPopup.help;"
+				  oncommand="custombuttons.uChelpButton();">
+			<observes element="custombuttons-contextbroadcaster-primary"
+					  attribute="hidden"/>
+			<observes element="custombuttons-contextbroadcaster-help"
+					  attribute="hidden"/>
+		</menuitem>
+		<menuseparator id="custombuttons-contextpopup-separator3">
+			<observes element="custombuttons-contextbroadcaster-primary"
+					  attribute="hidden"/>
+			<observes element="custombuttons-contextbroadcaster-customizeseparator"
+					  attribute="hidden"/>
+		</menuseparator>
+	</menupopup>
+
+    <stringbundleset id="cbStringBundleSet">
+		<stringbundle id="cbStrings"
+					  src="chrome://custombuttons/locale/custombuttons.properties"/>
+	</stringbundleset>
+	
+	<menupopup id="toolbar-context-menu">
+	    <menuitem label="&custombuttons.viewMenu_Item;" class="menuitem-iconic"
+				  oncommand="custombuttons.addButton(event)"/>
+	</menupopup>
+	
+	<menupopup id="main-toolbar-context-menu">
+	    <menuitem label="&custombuttons.viewMenu_Item;" class="menuitem-iconic"
+				  oncommand="custombuttons.addButton(event)"/>
+	</menupopup>
+
+</overlay>

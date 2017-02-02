@@ -1,0 +1,232 @@
+Changelog
+0.0.5.8.9
+# Fixed: Image conversion to base64 doesn't work
+0.0.5.8.8
+# Fixed: custombuttons' page in addon manager doesn't work
+0.0.5.8.7
+# Fixed: Custom Buttons broken on Firefox version 48
+# Fixed: buttons from bookmarks are installed twice
+0.0.5.8.6
+# Fixed: custombutton:// protocol doesn't work on electrolysis
+0.0.5.8.5
+# Fixed: impossible to change external editor if it was uninstalled or path to it was changed
+0.0.5.8.4
++ Added: es-AR translation
+0.0.5.8.3
+# Fixed: 'cbu' object isn't available from button's code
+0.0.5.8.2
+# Fixed: Browser Console is not working properly on Firefox versions higher than 43
+# Fixed: custombuttons broken on Firefox 44+ due to changes were introduced to make Firefox compliant with the final ES6 standard
+0.0.5.8
+# Fixed: Cloned buttons don't appear in new browser window (Firefox 29+)
+# Fixed: Support Browser Console in Firefox 29+
+0.0.5.7
+# Fixed: buttons doesn't initialize on Firefox with australis ui
+0.0.5.6
+Implemented synchronization of the custom buttons' list in the Add-ons Manager
+for operations with the buttons in the browser window
++ Added: Add-ons Manager integration
+# Fixed: bug 24576 "Edit…" menuitem opens "Add New Button" dialog"
+# Fixed: bug 24343 "All errors always come from the button with the same id"
+# Fixed: bug 24045 'Add functionality to use external editor for editing
+codes'
+# Fixed: (Editor) accesskeys should not work when the "Hot key" field is
+focused
+0.0.5.5
+! Changed: logic to determine the presence of changes in the editor
+# Fixed: click on a custom button url in the Error Console may select an inappropriate line
+# Fixed: Button cannot be redistribute/reinstall from its URI if the button code contains percent encoding
+# Fixed: (Windows) content's context menu doesn't open after gQuot.showPopup method was called
+# Fixed: 'hot keys' don't work in Firefox 6
+Marked compatible with Firefox 7.0a1
+# Fixed: "Bookmark button" menuitem should not be displayed in Sunbird/KompoZer
+0.0.5.4
++ Added: Firefox 6.0a1 compatibility
++ Added: Thunderbird 3.3a4pre compatibility
++ Added: SeaMonkey 2.2a1pre compatibility
++ Added: indication for the buttons are being edited
++ Added: (Editor) saving of the selected word wrap mode
++ Added: 'self' predefined variable
++ Added: nl translation
+# Fixed: Several minor bugs
+0.0.5.3
++ Added: Firefox 4.0 compatibility
+! Changed: Now buttons wait for initialization till window will be loaded
++ Added: sr translation
++ Added: it-IT translation
+# Fixed: buttons aren't initialized after dragging from "Customize Toolbar" dialog
+# Fixed: (Editor) Ctrl+Shift+A doesn't work in Firefox 4
+0.0.5.2
++ Added: ko-KR translation
+- Removed: Buttons initialization in "Customize Toolbar dialog"
+- Removed: Export buttons into old custombutton:// URI formats
++ Added: Firefox 4.0b6pre compatibility
++ Added: Seamonkey 2.1b1pre compatibility
+* Implemented backups overlays
+! Changed: "custombuttons.mode" preference prefixed with "extensions." to compliance AMO rules
+# Fixed: Incorrect caret positioning when it moves in the presence of selected text
++ Added: Ability to save position and size of editor's windows separately for each button
+# Fixed: Several minor bugs
+0.0.5.1
++ Added: Seamonkey 2.1a3pre compatibility
++ Added: Firefox 4.0b4pre compatibility
++ Added: "Edit…" button in update button prompt dialog
++ Added: LOG, addEventListener, removeEventListener functions
++ Added: "reason" argument for "onDestroy" custom button's method
+* Restored desctructor section in custom buttons binding
+* Implemented new code execution mechanism with better error handling
+# Fixed: checkboxDialog / radioboxDialog doesn't modify options array argument
+# Fixed: bug 23040 "Assignment an custombuton:// uri as a button image causes infinite button installation loop"
+# Fixed: some minor bugs
+0.0.5.0 (was not released)
++ Added: Seamonkey 2.1a3pre compatibility
++ Added: Firefox 4.0b3pre compatibility
++ Added: "Edit…" button in update button prompt dialog
++ Added: LOG, addEventListener, removeEventListener functions
++ Added: "reason" argument for "onDestroy" custom button's method
+* Restored desctructor section in custom buttons binding
+* Implemented new code execution mechanism with better error handling
+# Fixed: checkboxDialog / radioboxDialog doesn't modify options array argument
+0.0.4.9
++ Added: nl-NL translation
++ Added: de-DE translation
+# Fixed: some minor bugs
+0.0.4.8
++ Added: Firefox 3.7a4pre support
++ Added: Thunderbird 3.2a1 support
++ Added: KompoZer 0.8b3 support
++ Added: Protection against loss of changes in the editor
++ Added: Middle mouse or Ctrl+Left click on "Clone button" menuitem makes new empty button
+# Fixed: Buttons with the same identifier can override the "hot" keys to each other
+* New extension icon
+0.0.4.7
++ Added: ability to disable buttons initialization in extension's Preferences dialog
++ Added: application command line options '-custombuttons disable-buttons-initialization'
+# Fixed: standard icons doesn't converted to base64 urls on Firefox 3.6/3.7
+# Fixed: Bug 22274 'Custom Buttons: settings' dialog doesn't work on SeaMonkey
+0.0.4.6
++ Added:   Thunderbird 3.0 support
++ Added:   Seamonkey 2.0 support
++ Added:   KompoZer 0.8b1 support
+- Removed: KompoZer 0.8a2 support
+# Fixed:   untrusted resources have access to the extension's resourses
+0.0.4.5
+# Fixed: Bug 21641 'CB 0.0.4.4 doesn't work in Thunderbird Compose/View windows'
+0.0.4.4
++ Added: Firefox 3.7a1pre support
++ Added: Thunderbird 3.0b4pre support
+# Fixed: Bug 21391 "ABP 1.1.1 breaks Custom Buttons extension"
+# Fixed: CB doesn't preserve XML.prettyPrinting field value
+# Fixed: readFile doesn't close input stream
+! Changed: error line number definition code
+0.0.4.3
++ Added: KompoZer 0.8a2 (0.7.99) support
+# Fixed: 'toggle comments' feature doesn't work
+0.0.4.2
++ Added: new features in code editor component:
+	- search ([Shift+]Ctrl+F / [Shift+]F3)
+	- search and replace ([Shift+]Ctrl+H)
+	- type ahead find (Ctrl+/)
+	- go to line (Ctrl+G)
+	- toggle word wrapping (Ctrl+W)
+# Fixed: "open button by link" feature doesn't work in console2 window
+0.0.4.1
+# Fixed: undo sequence sets default value in editor's code sections
+0.0.4.0
++ Added: three predefined icons for new buttons
++ Added: more than one code editor can be opened at same time
++ Added: code editor doesn't depends on main window
++ Added: Firefox 3.6a1pre support
+! Changed: code architecture
+0.0.3.10
++ Added: more than one code editor can be opened
+0.0.3.9
++ Added: Thunderbird 3.0b3pre support
++ Added: Calendar 1.0pre support
++ Added: Lightning extension support (experimental)
++ Added: 'hidelabel' value for 'cb-style' attribute (to hide button's label)
++ Added: "Add new button..." menu item for toolbars context menu
+0.0.3.8
+! Changed: ui code logic
+# Fixed: 'custombuttons' protocol vulnerability
+0.0.3.7
++ Added: Thunderbird 3.0b2pre support
+# Fixed: JavaScript console binding opened buttons only in main Thunderbird window
+0.0.3.6
++ Added: Firefox 3.1 support
++ Added: Sunbird 0.9 support
+# Fixed: some Thunderbird/Sunbird ui bugs
+0.0.3.5
+# Fixed: "Ctrl+Enter cannot be bound to a button" bug
+0.0.3.4
++ Added: edit button code feature before install
+# Fixed: some cb2api support bugs
+0.0.3.3
+# Fixed: support page link appears in other's extensions about dialog
+0.0.3.2
+# Fixed: custombutton:// protocol handler bug
+0.0.3.1
+# Fixed: NoScript xss filter incompatibility
++ Added: support page link into about extension dialog
+0.0.3
+# Fixed: bug with creating cb links for buttons, which contain ']]>' character sequence in code
+# Fixed: "menu" and "menu-button" custom buttons styling in Thunderbird/Sunbird
+! Changed: the way to keep context menu in actual state
+0.0.2.9
+# Fixed: user specified context menu doesn't work
++ Added: new custom buttons debug facility - js console shows correct number for error line and button editor can be opened just from js console
+0.0.2.8
+* Hotkey doesn't runs button code bug fixed
+0.0.2.7
+* Fixed few browser UI synchronization issues
+* Added Firefox 3b5pre support
+* Added Sunbird 0.8 support (experimental)
+* CB² custombuttons API partially implemented
+* Added JavaScript 1.8 support in Firefox3
+* Added JavaScript 1.7 support in Firefox2
+* Small UI enhacements
+* XUL code refactoring
+0.0.2.6
+* Custom buttons code execution context error fixed.
+* Version number deleted from extension's name.
+0.0.2.5
+* Security fix to prevent local disk access (security issues created by Firefox bug #413250)
+0.0.2.4
+* Code reorganizing
+0.0.2.3.6
+* Added capability to assign hot keys for custom buttons
+0.0.2.3.5
+* Flock support added
+0.0.2.3.4
+* Code experiments
+0.0.2.3.2
+* Added custombutton protocol support in mail messages
+* Small code refactoring
+0.0.2.3
+* Now custom buttons available in Thunderbird message and compose message windows.
+0.0.2.2
+* Fixed a bug with some nonoperating buttons.
+* Fixed a bug with buttons which hasn't 'cb-init' attribute.
+* Fixed 'settings.editor.showApplyButton' and 'mode' preferences conflict.
+0.0.2.1
+* Small code refactoring
+* Firefox 3b2, Thunderbird 2.0.0.9 support
+0.0.2
+* The code has rather strongly changed.
+  No new functionality added, but the principle of work was changed.
+* Buttons are storing now in the profile folder instead of prefs.js
+0.0.1.2
+* Fixed a bug when incorrect initialization code caused button's position reset after browser restart.
+* Thunderbird support
+* Flock support
+* Some enhances to code editor:
+  - Apply Button (hidden by default - set custombuttons.settings.editor.showApplyButton=true to enable it) 
+  - F9 hot key executes oncommand code (not initialization code)
+* Added some localizations
+* Minor changes and bug fixes
+* Added compatibility for Toolbar Enhancements extension
+
+0.0.1
+* First release
+
+
